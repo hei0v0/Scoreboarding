@@ -163,7 +163,7 @@ void getInstruction(){ // 读指令
             case 3:
                 Ins.S2 = token;
                 if (RegStatus.count(Ins.S2) == 0)
-                    RegStatus[Ins.S2] == FU::Fu_Null;
+                    RegStatus.insert(make_pair(Ins.S2, FU::Fu_Null));
             }
             if (Ins.S2 != "") break;
         }
