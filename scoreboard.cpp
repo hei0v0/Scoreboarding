@@ -94,21 +94,22 @@ void PrintStatus(){ // 输出
     cout << "-------------------------------Register Status--------------------------------" << endl;
     std::vector<std::pair<std::string, FU>> regList(RegStatus.begin(), RegStatus.end());
     std::sort(regList.begin(), regList.end(), compareRegisters);
-
-    cout << setiosflags(ios::left) << setw(5) << " " << resetiosflags(ios::left) << setiosflags(ios::right);
-    for (const auto &reg : regList)
+    const int columns = 7;
+    for (int i = 0; i < regList.size(); i += columns)
     {
-        cout << setw(10) << reg.first;
+        cout << setiosflags(ios::left) << setw(5) << " " << resetiosflags(ios::left) << setiosflags(ios::right);
+        for (int j = i; j < i + columns && j < regList.size(); ++j){
+            cout << setw(10) << regList[j].first;
+        }
+        cout << resetiosflags(ios::right) << endl;
+        cout << "------------------------------------------------------------------------------" << endl;
+        cout << setiosflags(ios::left) << setw(5) << "FU" << resetiosflags(ios::left) << setiosflags(ios::right);
+        for (int j = i; j < i + columns && j < regList.size(); ++j){
+            cout << setw(10) << ReFU[regList[j].second];
+        }
+        cout << resetiosflags(ios::right) << endl;
+        cout << "------------------------------------------------------------------------------" << endl;
     }
-    cout << resetiosflags(ios::right) << endl;
-    cout << "------------------------------------------------------------------------------" << endl;
-    cout << setiosflags(ios::left) << setw(5) << "FU" << resetiosflags(ios::left) << setiosflags(ios::right);
-    for (const auto &reg : regList)
-    {
-        cout << setw(10) << ReFU[reg.second];
-    }
-    cout << resetiosflags(ios::right) << endl;
-    cout << "------------------------------------------------------------------------------" << endl;
 }
 
 void getInstruction(){ // 读指令
@@ -227,7 +228,7 @@ void runIssue(InstructionStatus &Ins){ // 执行流出
     FuStatus[Ins.Fu].Qj = RegStatus.count(FuStatus[Ins.Fu].Fj) == 0 ? FU::Fu_Null : RegStatus[FuStatus[Ins.Fu].Fj];
     FuStatus[Ins.Fu].Qk = RegStatus.count(FuStatus[Ins.Fu].Fk) == 0 ? FU::Fu_Null : RegStatus[FuStatus[Ins.Fu].Fk];
     FuStatus[Ins.Fu].Rj = FuStatus[Ins.Fu].Qj == FU::Fu_Null ? true : false;
-    FuStatus[Ins.Fu].Rk = FuStatus[FU::Integer].Qk == FU::Fu_Null ? true : false;
+    FuStatus[Ins.Fu].Rk = FuStatus[Ins.Fu].Qk == FU::Fu_Null ? true : false;
     RegStatus.find(Ins.D)->second = Ins.Fu;
 }
 
@@ -262,7 +263,7 @@ void writeResult(InstructionStatus &Ins){ // 判断写结果
     bool flag=true;
     for(int i=FU::Integer;i<=FU::Divide;i++){
         if(i!=Ins.Fu){
-            if ((FuStatus[i].Fj == FuStatus[Ins.Fu].Fi && FuStatus[i].Rj == true) && (FuStatus[i].Fk == FuStatus[Ins.Fu].Fi && FuStatus[i].Rk == true)){
+            if ((FuStatus[i].Fj == FuStatus[Ins.Fu].Fi && FuStatus[i].Rj == true) || (FuStatus[i].Fk == FuStatus[Ins.Fu].Fi && FuStatus[i].Rk == true)){
                 flag=false;
             }
         }
@@ -346,7 +347,6 @@ int main()
             }
         }
         PrintStatus();
-        cout << finishNum << " " << opt << endl;
     }
     system("pause");
     return 0;
