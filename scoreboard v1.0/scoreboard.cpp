@@ -57,8 +57,7 @@ bool compareRegisters(const std::pair<std::string, FU> &a, const std::pair<std::
 }
 
 void PrintStatus(){ // 输出
-    cout << endl << endl;
-    cout << "Clock Cycle " << clockCycle << endl;
+    cout  << endl << "Clock Cycle " << clockCycle << endl;
     // 指令状态表
     cout << "------------------------------Instruction Status------------------------------" << endl;
     cout << setiosflags(ios::left) << setw(15) << "Instruction" << resetiosflags(ios::left) << setiosflags(ios::right) << setw(15) << "Issue" << setw(15) << "Read Operands" << setw(15) << "Execution" << setw(15) << "Write Result" << resetiosflags(ios::right) << endl;
@@ -110,6 +109,7 @@ void PrintStatus(){ // 输出
         cout << resetiosflags(ios::right) << endl;
         cout << "------------------------------------------------------------------------------" << endl;
     }
+    cout << endl;
 }
 
 void getInstruction(){ // 读指令
@@ -300,6 +300,8 @@ void runWriteResult(InstructionStatus &Ins){
 
 int main()
 {
+    freopen("input.txt", "r", stdin);    // 生成得数据文件
+    freopen("output.txt", "w", stdout); // 输出文件
     cin >> opt;
     string str = "\n";
     getline(cin, str);
@@ -348,6 +350,5 @@ int main()
         }
         PrintStatus();
     }
-    system("pause");
     return 0;
 }
