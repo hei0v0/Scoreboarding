@@ -11,13 +11,13 @@ DIV.D F10 F0 F6              0              0             0               0
 ADD.D F6 F8 F2               0              0             0               0
 ------------------------------------------------------------------------------
 -----------------------------Funtion Unit Status------------------------------
-FU          busy    Op    Fi    Fj    Fk    Qj    Qk    Rj    Rk
+FU          busy    Op    Fi    Fj    Fk        Qj        Qk    Rj    Rk
 ------------------------------------------------------------------------------
-Integer       no                                        no    no
-Mult1         no                                        no    no
-Mult2         no                                        no    no
-Add           no                                        no    no
-Divide        no                                        no    no
+Integer       no                                                        
+Mult1         no                                                        
+Mult2         no                                                        
+Add           no                                                        
+Divide        no                                                        
 ------------------------------------------------------------------------------
 -------------------------------Register Status--------------------------------
              F0        F2        F4        F6        F8       F10        R2
@@ -42,13 +42,13 @@ DIV.D F10 F0 F6              0              0             0               0
 ADD.D F6 F8 F2               0              0             0               0
 ------------------------------------------------------------------------------
 -----------------------------Funtion Unit Status------------------------------
-FU          busy    Op    Fi    Fj    Fk    Qj    Qk    Rj    Rk
+FU          busy    Op    Fi    Fj    Fk        Qj        Qk    Rj    Rk
 ------------------------------------------------------------------------------
-Integer      yes   L.D    F6          R2               yes   yes
-Mult1         no                                        no    no
-Mult2         no                                        no    no
-Add           no                                        no    no
-Divide        no                                        no    no
+Integer      yes   L.D    F6          R2                             yes
+Mult1         no                                                        
+Mult2         no                                                        
+Add           no                                                        
+Divide        no                                                        
 ------------------------------------------------------------------------------
 -------------------------------Register Status--------------------------------
              F0        F2        F4        F6        F8       F10        R2
@@ -73,13 +73,13 @@ DIV.D F10 F0 F6              0              0             0               0
 ADD.D F6 F8 F2               0              0             0               0
 ------------------------------------------------------------------------------
 -----------------------------Funtion Unit Status------------------------------
-FU          busy    Op    Fi    Fj    Fk    Qj    Qk    Rj    Rk
+FU          busy    Op    Fi    Fj    Fk        Qj        Qk    Rj    Rk
 ------------------------------------------------------------------------------
-Integer      yes   L.D    F6          R2                no    no
-Mult1         no                                        no    no
-Mult2         no                                        no    no
-Add           no                                        no    no
-Divide        no                                        no    no
+Integer      yes   L.D    F6          R2                              no
+Mult1         no                                                        
+Mult2         no                                                        
+Add           no                                                        
+Divide        no                                                        
 ------------------------------------------------------------------------------
 -------------------------------Register Status--------------------------------
              F0        F2        F4        F6        F8       F10        R2
@@ -104,13 +104,13 @@ DIV.D F10 F0 F6              0              0             0               0
 ADD.D F6 F8 F2               0              0             0               0
 ------------------------------------------------------------------------------
 -----------------------------Funtion Unit Status------------------------------
-FU          busy    Op    Fi    Fj    Fk    Qj    Qk    Rj    Rk
+FU          busy    Op    Fi    Fj    Fk        Qj        Qk    Rj    Rk
 ------------------------------------------------------------------------------
-Integer      yes   L.D    F6          R2                no    no
-Mult1         no                                        no    no
-Mult2         no                                        no    no
-Add           no                                        no    no
-Divide        no                                        no    no
+Integer      yes   L.D    F6          R2                              no
+Mult1         no                                                        
+Mult2         no                                                        
+Add           no                                                        
+Divide        no                                                        
 ------------------------------------------------------------------------------
 -------------------------------Register Status--------------------------------
              F0        F2        F4        F6        F8       F10        R2
@@ -135,13 +135,13 @@ DIV.D F10 F0 F6              0              0             0               0
 ADD.D F6 F8 F2               0              0             0               0
 ------------------------------------------------------------------------------
 -----------------------------Funtion Unit Status------------------------------
-FU          busy    Op    Fi    Fj    Fk    Qj    Qk    Rj    Rk
+FU          busy    Op    Fi    Fj    Fk        Qj        Qk    Rj    Rk
 ------------------------------------------------------------------------------
-Integer       no                                        no    no
-Mult1         no                                        no    no
-Mult2         no                                        no    no
-Add           no                                        no    no
-Divide        no                                        no    no
+Integer       no                                                        
+Mult1         no                                                        
+Mult2         no                                                        
+Add           no                                                        
+Divide        no                                                        
 ------------------------------------------------------------------------------
 -------------------------------Register Status--------------------------------
              F0        F2        F4        F6        F8       F10        R2
@@ -166,13 +166,13 @@ DIV.D F10 F0 F6              0              0             0               0
 ADD.D F6 F8 F2               0              0             0               0
 ------------------------------------------------------------------------------
 -----------------------------Funtion Unit Status------------------------------
-FU          busy    Op    Fi    Fj    Fk    Qj    Qk    Rj    Rk
+FU          busy    Op    Fi    Fj    Fk        Qj        Qk    Rj    Rk
 ------------------------------------------------------------------------------
-Integer      yes   L.D    F2          R3               yes   yes
-Mult1         no                                        no    no
-Mult2         no                                        no    no
-Add           no                                        no    no
-Divide        no                                        no    no
+Integer      yes   L.D    F2          R3                             yes
+Mult1         no                                                        
+Mult2         no                                                        
+Add           no                                                        
+Divide        no                                                        
 ------------------------------------------------------------------------------
 -------------------------------Register Status--------------------------------
              F0        F2        F4        F6        F8       F10        R2
@@ -197,13 +197,13 @@ DIV.D F10 F0 F6              0              0             0               0
 ADD.D F6 F8 F2               0              0             0               0
 ------------------------------------------------------------------------------
 -----------------------------Funtion Unit Status------------------------------
-FU          busy    Op    Fi    Fj    Fk    Qj    Qk    Rj    Rk
+FU          busy    Op    Fi    Fj    Fk        Qj        Qk    Rj    Rk
 ------------------------------------------------------------------------------
-Integer      yes   L.D    F2          R3                no    no
-Mult1        yes   L.D    F0    F2    F4Integer          no   yes
-Mult2         no                                        no    no
-Add           no                                        no    no
-Divide        no                                        no    no
+Integer      yes   L.D    F2          R3                              no
+Mult1        yes   L.D    F0    F2    F4   Integer              no   yes
+Mult2         no                                                        
+Add           no                                                        
+Divide        no                                                        
 ------------------------------------------------------------------------------
 -------------------------------Register Status--------------------------------
              F0        F2        F4        F6        F8       F10        R2
@@ -228,13 +228,13 @@ DIV.D F10 F0 F6              0              0             0               0
 ADD.D F6 F8 F2               0              0             0               0
 ------------------------------------------------------------------------------
 -----------------------------Funtion Unit Status------------------------------
-FU          busy    Op    Fi    Fj    Fk    Qj    Qk    Rj    Rk
+FU          busy    Op    Fi    Fj    Fk        Qj        Qk    Rj    Rk
 ------------------------------------------------------------------------------
-Integer      yes   L.D    F2          R3                no    no
-Mult1        yes   L.D    F0    F2    F4Integer          no   yes
-Mult2         no                                        no    no
-Add          yes   L.D    F8    F6    F2      Integer   yes    no
-Divide        no                                        no    no
+Integer      yes   L.D    F2          R3                              no
+Mult1        yes   L.D    F0    F2    F4   Integer              no   yes
+Mult2         no                                                        
+Add          yes   L.D    F8    F6    F2             Integer   yes    no
+Divide        no                                                        
 ------------------------------------------------------------------------------
 -------------------------------Register Status--------------------------------
              F0        F2        F4        F6        F8       F10        R2
@@ -259,13 +259,13 @@ DIV.D F10 F0 F6              8              0             0               0
 ADD.D F6 F8 F2               0              0             0               0
 ------------------------------------------------------------------------------
 -----------------------------Funtion Unit Status------------------------------
-FU          busy    Op    Fi    Fj    Fk    Qj    Qk    Rj    Rk
+FU          busy    Op    Fi    Fj    Fk        Qj        Qk    Rj    Rk
 ------------------------------------------------------------------------------
-Integer       no                                        no    no
-Mult1        yes   L.D    F0    F2    F4Integer         yes   yes
-Mult2         no                                        no    no
-Add          yes   L.D    F8    F6    F2      Integer   yes   yes
-Divide       yes   L.D   F10    F0    F6 Mult1          no   yes
+Integer       no                                                        
+Mult1        yes   L.D    F0    F2    F4   Integer             yes   yes
+Mult2         no                                                        
+Add          yes   L.D    F8    F6    F2             Integer   yes   yes
+Divide       yes   L.D   F10    F0    F6     Mult1              no   yes
 ------------------------------------------------------------------------------
 -------------------------------Register Status--------------------------------
              F0        F2        F4        F6        F8       F10        R2
@@ -290,13 +290,13 @@ DIV.D F10 F0 F6              8              0             0               0
 ADD.D F6 F8 F2               0              0             0               0
 ------------------------------------------------------------------------------
 -----------------------------Funtion Unit Status------------------------------
-FU          busy    Op    Fi    Fj    Fk    Qj    Qk    Rj    Rk
+FU          busy    Op    Fi    Fj    Fk        Qj        Qk    Rj    Rk
 ------------------------------------------------------------------------------
-Integer       no                                        no    no
-Mult1        yes   L.D    F0    F2    F4                no    no
-Mult2         no                                        no    no
-Add          yes   L.D    F8    F6    F2                no    no
-Divide       yes   L.D   F10    F0    F6 Mult1          no   yes
+Integer       no                                                        
+Mult1        yes   L.D    F0    F2    F4                        no    no
+Mult2         no                                                        
+Add          yes   L.D    F8    F6    F2                        no    no
+Divide       yes   L.D   F10    F0    F6     Mult1              no   yes
 ------------------------------------------------------------------------------
 -------------------------------Register Status--------------------------------
              F0        F2        F4        F6        F8       F10        R2
@@ -321,13 +321,13 @@ DIV.D F10 F0 F6              8              0             0               0
 ADD.D F6 F8 F2               0              0             0               0
 ------------------------------------------------------------------------------
 -----------------------------Funtion Unit Status------------------------------
-FU          busy    Op    Fi    Fj    Fk    Qj    Qk    Rj    Rk
+FU          busy    Op    Fi    Fj    Fk        Qj        Qk    Rj    Rk
 ------------------------------------------------------------------------------
-Integer       no                                        no    no
-Mult1        yes   L.D    F0    F2    F4                no    no
-Mult2         no                                        no    no
-Add          yes   L.D    F8    F6    F2                no    no
-Divide       yes   L.D   F10    F0    F6 Mult1          no   yes
+Integer       no                                                        
+Mult1        yes   L.D    F0    F2    F4                        no    no
+Mult2         no                                                        
+Add          yes   L.D    F8    F6    F2                        no    no
+Divide       yes   L.D   F10    F0    F6     Mult1              no   yes
 ------------------------------------------------------------------------------
 -------------------------------Register Status--------------------------------
              F0        F2        F4        F6        F8       F10        R2
@@ -352,13 +352,13 @@ DIV.D F10 F0 F6              8              0             0               0
 ADD.D F6 F8 F2               0              0             0               0
 ------------------------------------------------------------------------------
 -----------------------------Funtion Unit Status------------------------------
-FU          busy    Op    Fi    Fj    Fk    Qj    Qk    Rj    Rk
+FU          busy    Op    Fi    Fj    Fk        Qj        Qk    Rj    Rk
 ------------------------------------------------------------------------------
-Integer       no                                        no    no
-Mult1        yes   L.D    F0    F2    F4                no    no
-Mult2         no                                        no    no
-Add          yes   L.D    F8    F6    F2                no    no
-Divide       yes   L.D   F10    F0    F6 Mult1          no   yes
+Integer       no                                                        
+Mult1        yes   L.D    F0    F2    F4                        no    no
+Mult2         no                                                        
+Add          yes   L.D    F8    F6    F2                        no    no
+Divide       yes   L.D   F10    F0    F6     Mult1              no   yes
 ------------------------------------------------------------------------------
 -------------------------------Register Status--------------------------------
              F0        F2        F4        F6        F8       F10        R2
@@ -383,13 +383,13 @@ DIV.D F10 F0 F6              8              0             0               0
 ADD.D F6 F8 F2               0              0             0               0
 ------------------------------------------------------------------------------
 -----------------------------Funtion Unit Status------------------------------
-FU          busy    Op    Fi    Fj    Fk    Qj    Qk    Rj    Rk
+FU          busy    Op    Fi    Fj    Fk        Qj        Qk    Rj    Rk
 ------------------------------------------------------------------------------
-Integer       no                                        no    no
-Mult1        yes   L.D    F0    F2    F4                no    no
-Mult2         no                                        no    no
-Add           no                                        no    no
-Divide       yes   L.D   F10    F0    F6 Mult1          no   yes
+Integer       no                                                        
+Mult1        yes   L.D    F0    F2    F4                        no    no
+Mult2         no                                                        
+Add           no                                                        
+Divide       yes   L.D   F10    F0    F6     Mult1              no   yes
 ------------------------------------------------------------------------------
 -------------------------------Register Status--------------------------------
              F0        F2        F4        F6        F8       F10        R2
@@ -414,13 +414,13 @@ DIV.D F10 F0 F6              8              0             0               0
 ADD.D F6 F8 F2              13              0             0               0
 ------------------------------------------------------------------------------
 -----------------------------Funtion Unit Status------------------------------
-FU          busy    Op    Fi    Fj    Fk    Qj    Qk    Rj    Rk
+FU          busy    Op    Fi    Fj    Fk        Qj        Qk    Rj    Rk
 ------------------------------------------------------------------------------
-Integer       no                                        no    no
-Mult1        yes   L.D    F0    F2    F4                no    no
-Mult2         no                                        no    no
-Add          yes   L.D    F6    F8    F2               yes   yes
-Divide       yes   L.D   F10    F0    F6 Mult1          no   yes
+Integer       no                                                        
+Mult1        yes   L.D    F0    F2    F4                        no    no
+Mult2         no                                                        
+Add          yes   L.D    F6    F8    F2                       yes   yes
+Divide       yes   L.D   F10    F0    F6     Mult1              no   yes
 ------------------------------------------------------------------------------
 -------------------------------Register Status--------------------------------
              F0        F2        F4        F6        F8       F10        R2
@@ -445,13 +445,13 @@ DIV.D F10 F0 F6              8              0             0               0
 ADD.D F6 F8 F2              13             14             0               0
 ------------------------------------------------------------------------------
 -----------------------------Funtion Unit Status------------------------------
-FU          busy    Op    Fi    Fj    Fk    Qj    Qk    Rj    Rk
+FU          busy    Op    Fi    Fj    Fk        Qj        Qk    Rj    Rk
 ------------------------------------------------------------------------------
-Integer       no                                        no    no
-Mult1        yes   L.D    F0    F2    F4                no    no
-Mult2         no                                        no    no
-Add          yes   L.D    F6    F8    F2                no    no
-Divide       yes   L.D   F10    F0    F6 Mult1          no   yes
+Integer       no                                                        
+Mult1        yes   L.D    F0    F2    F4                        no    no
+Mult2         no                                                        
+Add          yes   L.D    F6    F8    F2                        no    no
+Divide       yes   L.D   F10    F0    F6     Mult1              no   yes
 ------------------------------------------------------------------------------
 -------------------------------Register Status--------------------------------
              F0        F2        F4        F6        F8       F10        R2
@@ -476,13 +476,13 @@ DIV.D F10 F0 F6              8              0             0               0
 ADD.D F6 F8 F2              13             14           15-               0
 ------------------------------------------------------------------------------
 -----------------------------Funtion Unit Status------------------------------
-FU          busy    Op    Fi    Fj    Fk    Qj    Qk    Rj    Rk
+FU          busy    Op    Fi    Fj    Fk        Qj        Qk    Rj    Rk
 ------------------------------------------------------------------------------
-Integer       no                                        no    no
-Mult1        yes   L.D    F0    F2    F4                no    no
-Mult2         no                                        no    no
-Add          yes   L.D    F6    F8    F2                no    no
-Divide       yes   L.D   F10    F0    F6 Mult1          no   yes
+Integer       no                                                        
+Mult1        yes   L.D    F0    F2    F4                        no    no
+Mult2         no                                                        
+Add          yes   L.D    F6    F8    F2                        no    no
+Divide       yes   L.D   F10    F0    F6     Mult1              no   yes
 ------------------------------------------------------------------------------
 -------------------------------Register Status--------------------------------
              F0        F2        F4        F6        F8       F10        R2
@@ -507,13 +507,13 @@ DIV.D F10 F0 F6              8              0             0               0
 ADD.D F6 F8 F2              13             14          15-16              0
 ------------------------------------------------------------------------------
 -----------------------------Funtion Unit Status------------------------------
-FU          busy    Op    Fi    Fj    Fk    Qj    Qk    Rj    Rk
+FU          busy    Op    Fi    Fj    Fk        Qj        Qk    Rj    Rk
 ------------------------------------------------------------------------------
-Integer       no                                        no    no
-Mult1        yes   L.D    F0    F2    F4                no    no
-Mult2         no                                        no    no
-Add          yes   L.D    F6    F8    F2                no    no
-Divide       yes   L.D   F10    F0    F6 Mult1          no   yes
+Integer       no                                                        
+Mult1        yes   L.D    F0    F2    F4                        no    no
+Mult2         no                                                        
+Add          yes   L.D    F6    F8    F2                        no    no
+Divide       yes   L.D   F10    F0    F6     Mult1              no   yes
 ------------------------------------------------------------------------------
 -------------------------------Register Status--------------------------------
              F0        F2        F4        F6        F8       F10        R2
@@ -538,13 +538,13 @@ DIV.D F10 F0 F6              8              0             0               0
 ADD.D F6 F8 F2              13             14          15-16              0
 ------------------------------------------------------------------------------
 -----------------------------Funtion Unit Status------------------------------
-FU          busy    Op    Fi    Fj    Fk    Qj    Qk    Rj    Rk
+FU          busy    Op    Fi    Fj    Fk        Qj        Qk    Rj    Rk
 ------------------------------------------------------------------------------
-Integer       no                                        no    no
-Mult1        yes   L.D    F0    F2    F4                no    no
-Mult2         no                                        no    no
-Add          yes   L.D    F6    F8    F2                no    no
-Divide       yes   L.D   F10    F0    F6 Mult1          no   yes
+Integer       no                                                        
+Mult1        yes   L.D    F0    F2    F4                        no    no
+Mult2         no                                                        
+Add          yes   L.D    F6    F8    F2                        no    no
+Divide       yes   L.D   F10    F0    F6     Mult1              no   yes
 ------------------------------------------------------------------------------
 -------------------------------Register Status--------------------------------
              F0        F2        F4        F6        F8       F10        R2
@@ -569,13 +569,13 @@ DIV.D F10 F0 F6              8              0             0               0
 ADD.D F6 F8 F2              13             14          15-16              0
 ------------------------------------------------------------------------------
 -----------------------------Funtion Unit Status------------------------------
-FU          busy    Op    Fi    Fj    Fk    Qj    Qk    Rj    Rk
+FU          busy    Op    Fi    Fj    Fk        Qj        Qk    Rj    Rk
 ------------------------------------------------------------------------------
-Integer       no                                        no    no
-Mult1        yes   L.D    F0    F2    F4                no    no
-Mult2         no                                        no    no
-Add          yes   L.D    F6    F8    F2                no    no
-Divide       yes   L.D   F10    F0    F6 Mult1          no   yes
+Integer       no                                                        
+Mult1        yes   L.D    F0    F2    F4                        no    no
+Mult2         no                                                        
+Add          yes   L.D    F6    F8    F2                        no    no
+Divide       yes   L.D   F10    F0    F6     Mult1              no   yes
 ------------------------------------------------------------------------------
 -------------------------------Register Status--------------------------------
              F0        F2        F4        F6        F8       F10        R2
@@ -600,13 +600,13 @@ DIV.D F10 F0 F6              8              0             0               0
 ADD.D F6 F8 F2              13             14          15-16              0
 ------------------------------------------------------------------------------
 -----------------------------Funtion Unit Status------------------------------
-FU          busy    Op    Fi    Fj    Fk    Qj    Qk    Rj    Rk
+FU          busy    Op    Fi    Fj    Fk        Qj        Qk    Rj    Rk
 ------------------------------------------------------------------------------
-Integer       no                                        no    no
-Mult1        yes   L.D    F0    F2    F4                no    no
-Mult2         no                                        no    no
-Add          yes   L.D    F6    F8    F2                no    no
-Divide       yes   L.D   F10    F0    F6 Mult1          no   yes
+Integer       no                                                        
+Mult1        yes   L.D    F0    F2    F4                        no    no
+Mult2         no                                                        
+Add          yes   L.D    F6    F8    F2                        no    no
+Divide       yes   L.D   F10    F0    F6     Mult1              no   yes
 ------------------------------------------------------------------------------
 -------------------------------Register Status--------------------------------
              F0        F2        F4        F6        F8       F10        R2
@@ -631,13 +631,13 @@ DIV.D F10 F0 F6              8              0             0               0
 ADD.D F6 F8 F2              13             14          15-16              0
 ------------------------------------------------------------------------------
 -----------------------------Funtion Unit Status------------------------------
-FU          busy    Op    Fi    Fj    Fk    Qj    Qk    Rj    Rk
+FU          busy    Op    Fi    Fj    Fk        Qj        Qk    Rj    Rk
 ------------------------------------------------------------------------------
-Integer       no                                        no    no
-Mult1         no                                        no    no
-Mult2         no                                        no    no
-Add          yes   L.D    F6    F8    F2                no    no
-Divide       yes   L.D   F10    F0    F6 Mult1         yes   yes
+Integer       no                                                        
+Mult1         no                                                        
+Mult2         no                                                        
+Add          yes   L.D    F6    F8    F2                        no    no
+Divide       yes   L.D   F10    F0    F6     Mult1             yes   yes
 ------------------------------------------------------------------------------
 -------------------------------Register Status--------------------------------
              F0        F2        F4        F6        F8       F10        R2
@@ -662,13 +662,13 @@ DIV.D F10 F0 F6              8             21             0               0
 ADD.D F6 F8 F2              13             14          15-16              0
 ------------------------------------------------------------------------------
 -----------------------------Funtion Unit Status------------------------------
-FU          busy    Op    Fi    Fj    Fk    Qj    Qk    Rj    Rk
+FU          busy    Op    Fi    Fj    Fk        Qj        Qk    Rj    Rk
 ------------------------------------------------------------------------------
-Integer       no                                        no    no
-Mult1         no                                        no    no
-Mult2         no                                        no    no
-Add          yes   L.D    F6    F8    F2                no    no
-Divide       yes   L.D   F10    F0    F6                no    no
+Integer       no                                                        
+Mult1         no                                                        
+Mult2         no                                                        
+Add          yes   L.D    F6    F8    F2                        no    no
+Divide       yes   L.D   F10    F0    F6                        no    no
 ------------------------------------------------------------------------------
 -------------------------------Register Status--------------------------------
              F0        F2        F4        F6        F8       F10        R2
@@ -693,13 +693,13 @@ DIV.D F10 F0 F6              8             21           22-               0
 ADD.D F6 F8 F2              13             14          15-16             22
 ------------------------------------------------------------------------------
 -----------------------------Funtion Unit Status------------------------------
-FU          busy    Op    Fi    Fj    Fk    Qj    Qk    Rj    Rk
+FU          busy    Op    Fi    Fj    Fk        Qj        Qk    Rj    Rk
 ------------------------------------------------------------------------------
-Integer       no                                        no    no
-Mult1         no                                        no    no
-Mult2         no                                        no    no
-Add           no                                        no    no
-Divide       yes   L.D   F10    F0    F6                no    no
+Integer       no                                                        
+Mult1         no                                                        
+Mult2         no                                                        
+Add           no                                                        
+Divide       yes   L.D   F10    F0    F6                        no    no
 ------------------------------------------------------------------------------
 -------------------------------Register Status--------------------------------
              F0        F2        F4        F6        F8       F10        R2
@@ -724,13 +724,13 @@ DIV.D F10 F0 F6              8             21           22-               0
 ADD.D F6 F8 F2              13             14          15-16             22
 ------------------------------------------------------------------------------
 -----------------------------Funtion Unit Status------------------------------
-FU          busy    Op    Fi    Fj    Fk    Qj    Qk    Rj    Rk
+FU          busy    Op    Fi    Fj    Fk        Qj        Qk    Rj    Rk
 ------------------------------------------------------------------------------
-Integer       no                                        no    no
-Mult1         no                                        no    no
-Mult2         no                                        no    no
-Add           no                                        no    no
-Divide       yes   L.D   F10    F0    F6                no    no
+Integer       no                                                        
+Mult1         no                                                        
+Mult2         no                                                        
+Add           no                                                        
+Divide       yes   L.D   F10    F0    F6                        no    no
 ------------------------------------------------------------------------------
 -------------------------------Register Status--------------------------------
              F0        F2        F4        F6        F8       F10        R2
@@ -755,13 +755,13 @@ DIV.D F10 F0 F6              8             21           22-               0
 ADD.D F6 F8 F2              13             14          15-16             22
 ------------------------------------------------------------------------------
 -----------------------------Funtion Unit Status------------------------------
-FU          busy    Op    Fi    Fj    Fk    Qj    Qk    Rj    Rk
+FU          busy    Op    Fi    Fj    Fk        Qj        Qk    Rj    Rk
 ------------------------------------------------------------------------------
-Integer       no                                        no    no
-Mult1         no                                        no    no
-Mult2         no                                        no    no
-Add           no                                        no    no
-Divide       yes   L.D   F10    F0    F6                no    no
+Integer       no                                                        
+Mult1         no                                                        
+Mult2         no                                                        
+Add           no                                                        
+Divide       yes   L.D   F10    F0    F6                        no    no
 ------------------------------------------------------------------------------
 -------------------------------Register Status--------------------------------
              F0        F2        F4        F6        F8       F10        R2
@@ -786,13 +786,13 @@ DIV.D F10 F0 F6              8             21           22-               0
 ADD.D F6 F8 F2              13             14          15-16             22
 ------------------------------------------------------------------------------
 -----------------------------Funtion Unit Status------------------------------
-FU          busy    Op    Fi    Fj    Fk    Qj    Qk    Rj    Rk
+FU          busy    Op    Fi    Fj    Fk        Qj        Qk    Rj    Rk
 ------------------------------------------------------------------------------
-Integer       no                                        no    no
-Mult1         no                                        no    no
-Mult2         no                                        no    no
-Add           no                                        no    no
-Divide       yes   L.D   F10    F0    F6                no    no
+Integer       no                                                        
+Mult1         no                                                        
+Mult2         no                                                        
+Add           no                                                        
+Divide       yes   L.D   F10    F0    F6                        no    no
 ------------------------------------------------------------------------------
 -------------------------------Register Status--------------------------------
              F0        F2        F4        F6        F8       F10        R2
@@ -817,13 +817,13 @@ DIV.D F10 F0 F6              8             21           22-               0
 ADD.D F6 F8 F2              13             14          15-16             22
 ------------------------------------------------------------------------------
 -----------------------------Funtion Unit Status------------------------------
-FU          busy    Op    Fi    Fj    Fk    Qj    Qk    Rj    Rk
+FU          busy    Op    Fi    Fj    Fk        Qj        Qk    Rj    Rk
 ------------------------------------------------------------------------------
-Integer       no                                        no    no
-Mult1         no                                        no    no
-Mult2         no                                        no    no
-Add           no                                        no    no
-Divide       yes   L.D   F10    F0    F6                no    no
+Integer       no                                                        
+Mult1         no                                                        
+Mult2         no                                                        
+Add           no                                                        
+Divide       yes   L.D   F10    F0    F6                        no    no
 ------------------------------------------------------------------------------
 -------------------------------Register Status--------------------------------
              F0        F2        F4        F6        F8       F10        R2
@@ -848,13 +848,13 @@ DIV.D F10 F0 F6              8             21           22-               0
 ADD.D F6 F8 F2              13             14          15-16             22
 ------------------------------------------------------------------------------
 -----------------------------Funtion Unit Status------------------------------
-FU          busy    Op    Fi    Fj    Fk    Qj    Qk    Rj    Rk
+FU          busy    Op    Fi    Fj    Fk        Qj        Qk    Rj    Rk
 ------------------------------------------------------------------------------
-Integer       no                                        no    no
-Mult1         no                                        no    no
-Mult2         no                                        no    no
-Add           no                                        no    no
-Divide       yes   L.D   F10    F0    F6                no    no
+Integer       no                                                        
+Mult1         no                                                        
+Mult2         no                                                        
+Add           no                                                        
+Divide       yes   L.D   F10    F0    F6                        no    no
 ------------------------------------------------------------------------------
 -------------------------------Register Status--------------------------------
              F0        F2        F4        F6        F8       F10        R2
@@ -879,13 +879,13 @@ DIV.D F10 F0 F6              8             21           22-               0
 ADD.D F6 F8 F2              13             14          15-16             22
 ------------------------------------------------------------------------------
 -----------------------------Funtion Unit Status------------------------------
-FU          busy    Op    Fi    Fj    Fk    Qj    Qk    Rj    Rk
+FU          busy    Op    Fi    Fj    Fk        Qj        Qk    Rj    Rk
 ------------------------------------------------------------------------------
-Integer       no                                        no    no
-Mult1         no                                        no    no
-Mult2         no                                        no    no
-Add           no                                        no    no
-Divide       yes   L.D   F10    F0    F6                no    no
+Integer       no                                                        
+Mult1         no                                                        
+Mult2         no                                                        
+Add           no                                                        
+Divide       yes   L.D   F10    F0    F6                        no    no
 ------------------------------------------------------------------------------
 -------------------------------Register Status--------------------------------
              F0        F2        F4        F6        F8       F10        R2
@@ -910,13 +910,13 @@ DIV.D F10 F0 F6              8             21           22-               0
 ADD.D F6 F8 F2              13             14          15-16             22
 ------------------------------------------------------------------------------
 -----------------------------Funtion Unit Status------------------------------
-FU          busy    Op    Fi    Fj    Fk    Qj    Qk    Rj    Rk
+FU          busy    Op    Fi    Fj    Fk        Qj        Qk    Rj    Rk
 ------------------------------------------------------------------------------
-Integer       no                                        no    no
-Mult1         no                                        no    no
-Mult2         no                                        no    no
-Add           no                                        no    no
-Divide       yes   L.D   F10    F0    F6                no    no
+Integer       no                                                        
+Mult1         no                                                        
+Mult2         no                                                        
+Add           no                                                        
+Divide       yes   L.D   F10    F0    F6                        no    no
 ------------------------------------------------------------------------------
 -------------------------------Register Status--------------------------------
              F0        F2        F4        F6        F8       F10        R2
@@ -941,13 +941,13 @@ DIV.D F10 F0 F6              8             21           22-               0
 ADD.D F6 F8 F2              13             14          15-16             22
 ------------------------------------------------------------------------------
 -----------------------------Funtion Unit Status------------------------------
-FU          busy    Op    Fi    Fj    Fk    Qj    Qk    Rj    Rk
+FU          busy    Op    Fi    Fj    Fk        Qj        Qk    Rj    Rk
 ------------------------------------------------------------------------------
-Integer       no                                        no    no
-Mult1         no                                        no    no
-Mult2         no                                        no    no
-Add           no                                        no    no
-Divide       yes   L.D   F10    F0    F6                no    no
+Integer       no                                                        
+Mult1         no                                                        
+Mult2         no                                                        
+Add           no                                                        
+Divide       yes   L.D   F10    F0    F6                        no    no
 ------------------------------------------------------------------------------
 -------------------------------Register Status--------------------------------
              F0        F2        F4        F6        F8       F10        R2
@@ -972,13 +972,13 @@ DIV.D F10 F0 F6              8             21           22-               0
 ADD.D F6 F8 F2              13             14          15-16             22
 ------------------------------------------------------------------------------
 -----------------------------Funtion Unit Status------------------------------
-FU          busy    Op    Fi    Fj    Fk    Qj    Qk    Rj    Rk
+FU          busy    Op    Fi    Fj    Fk        Qj        Qk    Rj    Rk
 ------------------------------------------------------------------------------
-Integer       no                                        no    no
-Mult1         no                                        no    no
-Mult2         no                                        no    no
-Add           no                                        no    no
-Divide       yes   L.D   F10    F0    F6                no    no
+Integer       no                                                        
+Mult1         no                                                        
+Mult2         no                                                        
+Add           no                                                        
+Divide       yes   L.D   F10    F0    F6                        no    no
 ------------------------------------------------------------------------------
 -------------------------------Register Status--------------------------------
              F0        F2        F4        F6        F8       F10        R2
@@ -1003,13 +1003,13 @@ DIV.D F10 F0 F6              8             21           22-               0
 ADD.D F6 F8 F2              13             14          15-16             22
 ------------------------------------------------------------------------------
 -----------------------------Funtion Unit Status------------------------------
-FU          busy    Op    Fi    Fj    Fk    Qj    Qk    Rj    Rk
+FU          busy    Op    Fi    Fj    Fk        Qj        Qk    Rj    Rk
 ------------------------------------------------------------------------------
-Integer       no                                        no    no
-Mult1         no                                        no    no
-Mult2         no                                        no    no
-Add           no                                        no    no
-Divide       yes   L.D   F10    F0    F6                no    no
+Integer       no                                                        
+Mult1         no                                                        
+Mult2         no                                                        
+Add           no                                                        
+Divide       yes   L.D   F10    F0    F6                        no    no
 ------------------------------------------------------------------------------
 -------------------------------Register Status--------------------------------
              F0        F2        F4        F6        F8       F10        R2
@@ -1034,13 +1034,13 @@ DIV.D F10 F0 F6              8             21           22-               0
 ADD.D F6 F8 F2              13             14          15-16             22
 ------------------------------------------------------------------------------
 -----------------------------Funtion Unit Status------------------------------
-FU          busy    Op    Fi    Fj    Fk    Qj    Qk    Rj    Rk
+FU          busy    Op    Fi    Fj    Fk        Qj        Qk    Rj    Rk
 ------------------------------------------------------------------------------
-Integer       no                                        no    no
-Mult1         no                                        no    no
-Mult2         no                                        no    no
-Add           no                                        no    no
-Divide       yes   L.D   F10    F0    F6                no    no
+Integer       no                                                        
+Mult1         no                                                        
+Mult2         no                                                        
+Add           no                                                        
+Divide       yes   L.D   F10    F0    F6                        no    no
 ------------------------------------------------------------------------------
 -------------------------------Register Status--------------------------------
              F0        F2        F4        F6        F8       F10        R2
@@ -1065,13 +1065,13 @@ DIV.D F10 F0 F6              8             21           22-               0
 ADD.D F6 F8 F2              13             14          15-16             22
 ------------------------------------------------------------------------------
 -----------------------------Funtion Unit Status------------------------------
-FU          busy    Op    Fi    Fj    Fk    Qj    Qk    Rj    Rk
+FU          busy    Op    Fi    Fj    Fk        Qj        Qk    Rj    Rk
 ------------------------------------------------------------------------------
-Integer       no                                        no    no
-Mult1         no                                        no    no
-Mult2         no                                        no    no
-Add           no                                        no    no
-Divide       yes   L.D   F10    F0    F6                no    no
+Integer       no                                                        
+Mult1         no                                                        
+Mult2         no                                                        
+Add           no                                                        
+Divide       yes   L.D   F10    F0    F6                        no    no
 ------------------------------------------------------------------------------
 -------------------------------Register Status--------------------------------
              F0        F2        F4        F6        F8       F10        R2
@@ -1096,13 +1096,13 @@ DIV.D F10 F0 F6              8             21           22-               0
 ADD.D F6 F8 F2              13             14          15-16             22
 ------------------------------------------------------------------------------
 -----------------------------Funtion Unit Status------------------------------
-FU          busy    Op    Fi    Fj    Fk    Qj    Qk    Rj    Rk
+FU          busy    Op    Fi    Fj    Fk        Qj        Qk    Rj    Rk
 ------------------------------------------------------------------------------
-Integer       no                                        no    no
-Mult1         no                                        no    no
-Mult2         no                                        no    no
-Add           no                                        no    no
-Divide       yes   L.D   F10    F0    F6                no    no
+Integer       no                                                        
+Mult1         no                                                        
+Mult2         no                                                        
+Add           no                                                        
+Divide       yes   L.D   F10    F0    F6                        no    no
 ------------------------------------------------------------------------------
 -------------------------------Register Status--------------------------------
              F0        F2        F4        F6        F8       F10        R2
@@ -1127,13 +1127,13 @@ DIV.D F10 F0 F6              8             21           22-               0
 ADD.D F6 F8 F2              13             14          15-16             22
 ------------------------------------------------------------------------------
 -----------------------------Funtion Unit Status------------------------------
-FU          busy    Op    Fi    Fj    Fk    Qj    Qk    Rj    Rk
+FU          busy    Op    Fi    Fj    Fk        Qj        Qk    Rj    Rk
 ------------------------------------------------------------------------------
-Integer       no                                        no    no
-Mult1         no                                        no    no
-Mult2         no                                        no    no
-Add           no                                        no    no
-Divide       yes   L.D   F10    F0    F6                no    no
+Integer       no                                                        
+Mult1         no                                                        
+Mult2         no                                                        
+Add           no                                                        
+Divide       yes   L.D   F10    F0    F6                        no    no
 ------------------------------------------------------------------------------
 -------------------------------Register Status--------------------------------
              F0        F2        F4        F6        F8       F10        R2
@@ -1158,13 +1158,13 @@ DIV.D F10 F0 F6              8             21           22-               0
 ADD.D F6 F8 F2              13             14          15-16             22
 ------------------------------------------------------------------------------
 -----------------------------Funtion Unit Status------------------------------
-FU          busy    Op    Fi    Fj    Fk    Qj    Qk    Rj    Rk
+FU          busy    Op    Fi    Fj    Fk        Qj        Qk    Rj    Rk
 ------------------------------------------------------------------------------
-Integer       no                                        no    no
-Mult1         no                                        no    no
-Mult2         no                                        no    no
-Add           no                                        no    no
-Divide       yes   L.D   F10    F0    F6                no    no
+Integer       no                                                        
+Mult1         no                                                        
+Mult2         no                                                        
+Add           no                                                        
+Divide       yes   L.D   F10    F0    F6                        no    no
 ------------------------------------------------------------------------------
 -------------------------------Register Status--------------------------------
              F0        F2        F4        F6        F8       F10        R2
@@ -1189,13 +1189,13 @@ DIV.D F10 F0 F6              8             21           22-               0
 ADD.D F6 F8 F2              13             14          15-16             22
 ------------------------------------------------------------------------------
 -----------------------------Funtion Unit Status------------------------------
-FU          busy    Op    Fi    Fj    Fk    Qj    Qk    Rj    Rk
+FU          busy    Op    Fi    Fj    Fk        Qj        Qk    Rj    Rk
 ------------------------------------------------------------------------------
-Integer       no                                        no    no
-Mult1         no                                        no    no
-Mult2         no                                        no    no
-Add           no                                        no    no
-Divide       yes   L.D   F10    F0    F6                no    no
+Integer       no                                                        
+Mult1         no                                                        
+Mult2         no                                                        
+Add           no                                                        
+Divide       yes   L.D   F10    F0    F6                        no    no
 ------------------------------------------------------------------------------
 -------------------------------Register Status--------------------------------
              F0        F2        F4        F6        F8       F10        R2
@@ -1220,13 +1220,13 @@ DIV.D F10 F0 F6              8             21           22-               0
 ADD.D F6 F8 F2              13             14          15-16             22
 ------------------------------------------------------------------------------
 -----------------------------Funtion Unit Status------------------------------
-FU          busy    Op    Fi    Fj    Fk    Qj    Qk    Rj    Rk
+FU          busy    Op    Fi    Fj    Fk        Qj        Qk    Rj    Rk
 ------------------------------------------------------------------------------
-Integer       no                                        no    no
-Mult1         no                                        no    no
-Mult2         no                                        no    no
-Add           no                                        no    no
-Divide       yes   L.D   F10    F0    F6                no    no
+Integer       no                                                        
+Mult1         no                                                        
+Mult2         no                                                        
+Add           no                                                        
+Divide       yes   L.D   F10    F0    F6                        no    no
 ------------------------------------------------------------------------------
 -------------------------------Register Status--------------------------------
              F0        F2        F4        F6        F8       F10        R2
@@ -1251,13 +1251,13 @@ DIV.D F10 F0 F6              8             21           22-               0
 ADD.D F6 F8 F2              13             14          15-16             22
 ------------------------------------------------------------------------------
 -----------------------------Funtion Unit Status------------------------------
-FU          busy    Op    Fi    Fj    Fk    Qj    Qk    Rj    Rk
+FU          busy    Op    Fi    Fj    Fk        Qj        Qk    Rj    Rk
 ------------------------------------------------------------------------------
-Integer       no                                        no    no
-Mult1         no                                        no    no
-Mult2         no                                        no    no
-Add           no                                        no    no
-Divide       yes   L.D   F10    F0    F6                no    no
+Integer       no                                                        
+Mult1         no                                                        
+Mult2         no                                                        
+Add           no                                                        
+Divide       yes   L.D   F10    F0    F6                        no    no
 ------------------------------------------------------------------------------
 -------------------------------Register Status--------------------------------
              F0        F2        F4        F6        F8       F10        R2
@@ -1282,13 +1282,13 @@ DIV.D F10 F0 F6              8             21           22-               0
 ADD.D F6 F8 F2              13             14          15-16             22
 ------------------------------------------------------------------------------
 -----------------------------Funtion Unit Status------------------------------
-FU          busy    Op    Fi    Fj    Fk    Qj    Qk    Rj    Rk
+FU          busy    Op    Fi    Fj    Fk        Qj        Qk    Rj    Rk
 ------------------------------------------------------------------------------
-Integer       no                                        no    no
-Mult1         no                                        no    no
-Mult2         no                                        no    no
-Add           no                                        no    no
-Divide       yes   L.D   F10    F0    F6                no    no
+Integer       no                                                        
+Mult1         no                                                        
+Mult2         no                                                        
+Add           no                                                        
+Divide       yes   L.D   F10    F0    F6                        no    no
 ------------------------------------------------------------------------------
 -------------------------------Register Status--------------------------------
              F0        F2        F4        F6        F8       F10        R2
@@ -1313,13 +1313,13 @@ DIV.D F10 F0 F6              8             21           22-               0
 ADD.D F6 F8 F2              13             14          15-16             22
 ------------------------------------------------------------------------------
 -----------------------------Funtion Unit Status------------------------------
-FU          busy    Op    Fi    Fj    Fk    Qj    Qk    Rj    Rk
+FU          busy    Op    Fi    Fj    Fk        Qj        Qk    Rj    Rk
 ------------------------------------------------------------------------------
-Integer       no                                        no    no
-Mult1         no                                        no    no
-Mult2         no                                        no    no
-Add           no                                        no    no
-Divide       yes   L.D   F10    F0    F6                no    no
+Integer       no                                                        
+Mult1         no                                                        
+Mult2         no                                                        
+Add           no                                                        
+Divide       yes   L.D   F10    F0    F6                        no    no
 ------------------------------------------------------------------------------
 -------------------------------Register Status--------------------------------
              F0        F2        F4        F6        F8       F10        R2
@@ -1344,13 +1344,13 @@ DIV.D F10 F0 F6              8             21           22-               0
 ADD.D F6 F8 F2              13             14          15-16             22
 ------------------------------------------------------------------------------
 -----------------------------Funtion Unit Status------------------------------
-FU          busy    Op    Fi    Fj    Fk    Qj    Qk    Rj    Rk
+FU          busy    Op    Fi    Fj    Fk        Qj        Qk    Rj    Rk
 ------------------------------------------------------------------------------
-Integer       no                                        no    no
-Mult1         no                                        no    no
-Mult2         no                                        no    no
-Add           no                                        no    no
-Divide       yes   L.D   F10    F0    F6                no    no
+Integer       no                                                        
+Mult1         no                                                        
+Mult2         no                                                        
+Add           no                                                        
+Divide       yes   L.D   F10    F0    F6                        no    no
 ------------------------------------------------------------------------------
 -------------------------------Register Status--------------------------------
              F0        F2        F4        F6        F8       F10        R2
@@ -1375,13 +1375,13 @@ DIV.D F10 F0 F6              8             21           22-               0
 ADD.D F6 F8 F2              13             14          15-16             22
 ------------------------------------------------------------------------------
 -----------------------------Funtion Unit Status------------------------------
-FU          busy    Op    Fi    Fj    Fk    Qj    Qk    Rj    Rk
+FU          busy    Op    Fi    Fj    Fk        Qj        Qk    Rj    Rk
 ------------------------------------------------------------------------------
-Integer       no                                        no    no
-Mult1         no                                        no    no
-Mult2         no                                        no    no
-Add           no                                        no    no
-Divide       yes   L.D   F10    F0    F6                no    no
+Integer       no                                                        
+Mult1         no                                                        
+Mult2         no                                                        
+Add           no                                                        
+Divide       yes   L.D   F10    F0    F6                        no    no
 ------------------------------------------------------------------------------
 -------------------------------Register Status--------------------------------
              F0        F2        F4        F6        F8       F10        R2
@@ -1406,13 +1406,13 @@ DIV.D F10 F0 F6              8             21           22-               0
 ADD.D F6 F8 F2              13             14          15-16             22
 ------------------------------------------------------------------------------
 -----------------------------Funtion Unit Status------------------------------
-FU          busy    Op    Fi    Fj    Fk    Qj    Qk    Rj    Rk
+FU          busy    Op    Fi    Fj    Fk        Qj        Qk    Rj    Rk
 ------------------------------------------------------------------------------
-Integer       no                                        no    no
-Mult1         no                                        no    no
-Mult2         no                                        no    no
-Add           no                                        no    no
-Divide       yes   L.D   F10    F0    F6                no    no
+Integer       no                                                        
+Mult1         no                                                        
+Mult2         no                                                        
+Add           no                                                        
+Divide       yes   L.D   F10    F0    F6                        no    no
 ------------------------------------------------------------------------------
 -------------------------------Register Status--------------------------------
              F0        F2        F4        F6        F8       F10        R2
@@ -1437,13 +1437,13 @@ DIV.D F10 F0 F6              8             21           22-               0
 ADD.D F6 F8 F2              13             14          15-16             22
 ------------------------------------------------------------------------------
 -----------------------------Funtion Unit Status------------------------------
-FU          busy    Op    Fi    Fj    Fk    Qj    Qk    Rj    Rk
+FU          busy    Op    Fi    Fj    Fk        Qj        Qk    Rj    Rk
 ------------------------------------------------------------------------------
-Integer       no                                        no    no
-Mult1         no                                        no    no
-Mult2         no                                        no    no
-Add           no                                        no    no
-Divide       yes   L.D   F10    F0    F6                no    no
+Integer       no                                                        
+Mult1         no                                                        
+Mult2         no                                                        
+Add           no                                                        
+Divide       yes   L.D   F10    F0    F6                        no    no
 ------------------------------------------------------------------------------
 -------------------------------Register Status--------------------------------
              F0        F2        F4        F6        F8       F10        R2
@@ -1468,13 +1468,13 @@ DIV.D F10 F0 F6              8             21           22-               0
 ADD.D F6 F8 F2              13             14          15-16             22
 ------------------------------------------------------------------------------
 -----------------------------Funtion Unit Status------------------------------
-FU          busy    Op    Fi    Fj    Fk    Qj    Qk    Rj    Rk
+FU          busy    Op    Fi    Fj    Fk        Qj        Qk    Rj    Rk
 ------------------------------------------------------------------------------
-Integer       no                                        no    no
-Mult1         no                                        no    no
-Mult2         no                                        no    no
-Add           no                                        no    no
-Divide       yes   L.D   F10    F0    F6                no    no
+Integer       no                                                        
+Mult1         no                                                        
+Mult2         no                                                        
+Add           no                                                        
+Divide       yes   L.D   F10    F0    F6                        no    no
 ------------------------------------------------------------------------------
 -------------------------------Register Status--------------------------------
              F0        F2        F4        F6        F8       F10        R2
@@ -1499,13 +1499,13 @@ DIV.D F10 F0 F6              8             21           22-               0
 ADD.D F6 F8 F2              13             14          15-16             22
 ------------------------------------------------------------------------------
 -----------------------------Funtion Unit Status------------------------------
-FU          busy    Op    Fi    Fj    Fk    Qj    Qk    Rj    Rk
+FU          busy    Op    Fi    Fj    Fk        Qj        Qk    Rj    Rk
 ------------------------------------------------------------------------------
-Integer       no                                        no    no
-Mult1         no                                        no    no
-Mult2         no                                        no    no
-Add           no                                        no    no
-Divide       yes   L.D   F10    F0    F6                no    no
+Integer       no                                                        
+Mult1         no                                                        
+Mult2         no                                                        
+Add           no                                                        
+Divide       yes   L.D   F10    F0    F6                        no    no
 ------------------------------------------------------------------------------
 -------------------------------Register Status--------------------------------
              F0        F2        F4        F6        F8       F10        R2
@@ -1530,13 +1530,13 @@ DIV.D F10 F0 F6              8             21           22-               0
 ADD.D F6 F8 F2              13             14          15-16             22
 ------------------------------------------------------------------------------
 -----------------------------Funtion Unit Status------------------------------
-FU          busy    Op    Fi    Fj    Fk    Qj    Qk    Rj    Rk
+FU          busy    Op    Fi    Fj    Fk        Qj        Qk    Rj    Rk
 ------------------------------------------------------------------------------
-Integer       no                                        no    no
-Mult1         no                                        no    no
-Mult2         no                                        no    no
-Add           no                                        no    no
-Divide       yes   L.D   F10    F0    F6                no    no
+Integer       no                                                        
+Mult1         no                                                        
+Mult2         no                                                        
+Add           no                                                        
+Divide       yes   L.D   F10    F0    F6                        no    no
 ------------------------------------------------------------------------------
 -------------------------------Register Status--------------------------------
              F0        F2        F4        F6        F8       F10        R2
@@ -1561,13 +1561,13 @@ DIV.D F10 F0 F6              8             21           22-               0
 ADD.D F6 F8 F2              13             14          15-16             22
 ------------------------------------------------------------------------------
 -----------------------------Funtion Unit Status------------------------------
-FU          busy    Op    Fi    Fj    Fk    Qj    Qk    Rj    Rk
+FU          busy    Op    Fi    Fj    Fk        Qj        Qk    Rj    Rk
 ------------------------------------------------------------------------------
-Integer       no                                        no    no
-Mult1         no                                        no    no
-Mult2         no                                        no    no
-Add           no                                        no    no
-Divide       yes   L.D   F10    F0    F6                no    no
+Integer       no                                                        
+Mult1         no                                                        
+Mult2         no                                                        
+Add           no                                                        
+Divide       yes   L.D   F10    F0    F6                        no    no
 ------------------------------------------------------------------------------
 -------------------------------Register Status--------------------------------
              F0        F2        F4        F6        F8       F10        R2
@@ -1592,13 +1592,13 @@ DIV.D F10 F0 F6              8             21           22-               0
 ADD.D F6 F8 F2              13             14          15-16             22
 ------------------------------------------------------------------------------
 -----------------------------Funtion Unit Status------------------------------
-FU          busy    Op    Fi    Fj    Fk    Qj    Qk    Rj    Rk
+FU          busy    Op    Fi    Fj    Fk        Qj        Qk    Rj    Rk
 ------------------------------------------------------------------------------
-Integer       no                                        no    no
-Mult1         no                                        no    no
-Mult2         no                                        no    no
-Add           no                                        no    no
-Divide       yes   L.D   F10    F0    F6                no    no
+Integer       no                                                        
+Mult1         no                                                        
+Mult2         no                                                        
+Add           no                                                        
+Divide       yes   L.D   F10    F0    F6                        no    no
 ------------------------------------------------------------------------------
 -------------------------------Register Status--------------------------------
              F0        F2        F4        F6        F8       F10        R2
@@ -1623,13 +1623,13 @@ DIV.D F10 F0 F6              8             21           22-               0
 ADD.D F6 F8 F2              13             14          15-16             22
 ------------------------------------------------------------------------------
 -----------------------------Funtion Unit Status------------------------------
-FU          busy    Op    Fi    Fj    Fk    Qj    Qk    Rj    Rk
+FU          busy    Op    Fi    Fj    Fk        Qj        Qk    Rj    Rk
 ------------------------------------------------------------------------------
-Integer       no                                        no    no
-Mult1         no                                        no    no
-Mult2         no                                        no    no
-Add           no                                        no    no
-Divide       yes   L.D   F10    F0    F6                no    no
+Integer       no                                                        
+Mult1         no                                                        
+Mult2         no                                                        
+Add           no                                                        
+Divide       yes   L.D   F10    F0    F6                        no    no
 ------------------------------------------------------------------------------
 -------------------------------Register Status--------------------------------
              F0        F2        F4        F6        F8       F10        R2
@@ -1654,13 +1654,13 @@ DIV.D F10 F0 F6              8             21           22-               0
 ADD.D F6 F8 F2              13             14          15-16             22
 ------------------------------------------------------------------------------
 -----------------------------Funtion Unit Status------------------------------
-FU          busy    Op    Fi    Fj    Fk    Qj    Qk    Rj    Rk
+FU          busy    Op    Fi    Fj    Fk        Qj        Qk    Rj    Rk
 ------------------------------------------------------------------------------
-Integer       no                                        no    no
-Mult1         no                                        no    no
-Mult2         no                                        no    no
-Add           no                                        no    no
-Divide       yes   L.D   F10    F0    F6                no    no
+Integer       no                                                        
+Mult1         no                                                        
+Mult2         no                                                        
+Add           no                                                        
+Divide       yes   L.D   F10    F0    F6                        no    no
 ------------------------------------------------------------------------------
 -------------------------------Register Status--------------------------------
              F0        F2        F4        F6        F8       F10        R2
@@ -1685,13 +1685,13 @@ DIV.D F10 F0 F6              8             21           22-               0
 ADD.D F6 F8 F2              13             14          15-16             22
 ------------------------------------------------------------------------------
 -----------------------------Funtion Unit Status------------------------------
-FU          busy    Op    Fi    Fj    Fk    Qj    Qk    Rj    Rk
+FU          busy    Op    Fi    Fj    Fk        Qj        Qk    Rj    Rk
 ------------------------------------------------------------------------------
-Integer       no                                        no    no
-Mult1         no                                        no    no
-Mult2         no                                        no    no
-Add           no                                        no    no
-Divide       yes   L.D   F10    F0    F6                no    no
+Integer       no                                                        
+Mult1         no                                                        
+Mult2         no                                                        
+Add           no                                                        
+Divide       yes   L.D   F10    F0    F6                        no    no
 ------------------------------------------------------------------------------
 -------------------------------Register Status--------------------------------
              F0        F2        F4        F6        F8       F10        R2
@@ -1716,13 +1716,13 @@ DIV.D F10 F0 F6              8             21           22-               0
 ADD.D F6 F8 F2              13             14          15-16             22
 ------------------------------------------------------------------------------
 -----------------------------Funtion Unit Status------------------------------
-FU          busy    Op    Fi    Fj    Fk    Qj    Qk    Rj    Rk
+FU          busy    Op    Fi    Fj    Fk        Qj        Qk    Rj    Rk
 ------------------------------------------------------------------------------
-Integer       no                                        no    no
-Mult1         no                                        no    no
-Mult2         no                                        no    no
-Add           no                                        no    no
-Divide       yes   L.D   F10    F0    F6                no    no
+Integer       no                                                        
+Mult1         no                                                        
+Mult2         no                                                        
+Add           no                                                        
+Divide       yes   L.D   F10    F0    F6                        no    no
 ------------------------------------------------------------------------------
 -------------------------------Register Status--------------------------------
              F0        F2        F4        F6        F8       F10        R2
@@ -1747,13 +1747,13 @@ DIV.D F10 F0 F6              8             21           22-               0
 ADD.D F6 F8 F2              13             14          15-16             22
 ------------------------------------------------------------------------------
 -----------------------------Funtion Unit Status------------------------------
-FU          busy    Op    Fi    Fj    Fk    Qj    Qk    Rj    Rk
+FU          busy    Op    Fi    Fj    Fk        Qj        Qk    Rj    Rk
 ------------------------------------------------------------------------------
-Integer       no                                        no    no
-Mult1         no                                        no    no
-Mult2         no                                        no    no
-Add           no                                        no    no
-Divide       yes   L.D   F10    F0    F6                no    no
+Integer       no                                                        
+Mult1         no                                                        
+Mult2         no                                                        
+Add           no                                                        
+Divide       yes   L.D   F10    F0    F6                        no    no
 ------------------------------------------------------------------------------
 -------------------------------Register Status--------------------------------
              F0        F2        F4        F6        F8       F10        R2
@@ -1778,13 +1778,13 @@ DIV.D F10 F0 F6              8             21           22-               0
 ADD.D F6 F8 F2              13             14          15-16             22
 ------------------------------------------------------------------------------
 -----------------------------Funtion Unit Status------------------------------
-FU          busy    Op    Fi    Fj    Fk    Qj    Qk    Rj    Rk
+FU          busy    Op    Fi    Fj    Fk        Qj        Qk    Rj    Rk
 ------------------------------------------------------------------------------
-Integer       no                                        no    no
-Mult1         no                                        no    no
-Mult2         no                                        no    no
-Add           no                                        no    no
-Divide       yes   L.D   F10    F0    F6                no    no
+Integer       no                                                        
+Mult1         no                                                        
+Mult2         no                                                        
+Add           no                                                        
+Divide       yes   L.D   F10    F0    F6                        no    no
 ------------------------------------------------------------------------------
 -------------------------------Register Status--------------------------------
              F0        F2        F4        F6        F8       F10        R2
@@ -1809,13 +1809,13 @@ DIV.D F10 F0 F6              8             21           22-               0
 ADD.D F6 F8 F2              13             14          15-16             22
 ------------------------------------------------------------------------------
 -----------------------------Funtion Unit Status------------------------------
-FU          busy    Op    Fi    Fj    Fk    Qj    Qk    Rj    Rk
+FU          busy    Op    Fi    Fj    Fk        Qj        Qk    Rj    Rk
 ------------------------------------------------------------------------------
-Integer       no                                        no    no
-Mult1         no                                        no    no
-Mult2         no                                        no    no
-Add           no                                        no    no
-Divide       yes   L.D   F10    F0    F6                no    no
+Integer       no                                                        
+Mult1         no                                                        
+Mult2         no                                                        
+Add           no                                                        
+Divide       yes   L.D   F10    F0    F6                        no    no
 ------------------------------------------------------------------------------
 -------------------------------Register Status--------------------------------
              F0        F2        F4        F6        F8       F10        R2
@@ -1840,13 +1840,13 @@ DIV.D F10 F0 F6              8             21           22-               0
 ADD.D F6 F8 F2              13             14          15-16             22
 ------------------------------------------------------------------------------
 -----------------------------Funtion Unit Status------------------------------
-FU          busy    Op    Fi    Fj    Fk    Qj    Qk    Rj    Rk
+FU          busy    Op    Fi    Fj    Fk        Qj        Qk    Rj    Rk
 ------------------------------------------------------------------------------
-Integer       no                                        no    no
-Mult1         no                                        no    no
-Mult2         no                                        no    no
-Add           no                                        no    no
-Divide       yes   L.D   F10    F0    F6                no    no
+Integer       no                                                        
+Mult1         no                                                        
+Mult2         no                                                        
+Add           no                                                        
+Divide       yes   L.D   F10    F0    F6                        no    no
 ------------------------------------------------------------------------------
 -------------------------------Register Status--------------------------------
              F0        F2        F4        F6        F8       F10        R2
@@ -1871,13 +1871,13 @@ DIV.D F10 F0 F6              8             21           22-               0
 ADD.D F6 F8 F2              13             14          15-16             22
 ------------------------------------------------------------------------------
 -----------------------------Funtion Unit Status------------------------------
-FU          busy    Op    Fi    Fj    Fk    Qj    Qk    Rj    Rk
+FU          busy    Op    Fi    Fj    Fk        Qj        Qk    Rj    Rk
 ------------------------------------------------------------------------------
-Integer       no                                        no    no
-Mult1         no                                        no    no
-Mult2         no                                        no    no
-Add           no                                        no    no
-Divide       yes   L.D   F10    F0    F6                no    no
+Integer       no                                                        
+Mult1         no                                                        
+Mult2         no                                                        
+Add           no                                                        
+Divide       yes   L.D   F10    F0    F6                        no    no
 ------------------------------------------------------------------------------
 -------------------------------Register Status--------------------------------
              F0        F2        F4        F6        F8       F10        R2
@@ -1902,13 +1902,13 @@ DIV.D F10 F0 F6              8             21          22-61              0
 ADD.D F6 F8 F2              13             14          15-16             22
 ------------------------------------------------------------------------------
 -----------------------------Funtion Unit Status------------------------------
-FU          busy    Op    Fi    Fj    Fk    Qj    Qk    Rj    Rk
+FU          busy    Op    Fi    Fj    Fk        Qj        Qk    Rj    Rk
 ------------------------------------------------------------------------------
-Integer       no                                        no    no
-Mult1         no                                        no    no
-Mult2         no                                        no    no
-Add           no                                        no    no
-Divide       yes   L.D   F10    F0    F6                no    no
+Integer       no                                                        
+Mult1         no                                                        
+Mult2         no                                                        
+Add           no                                                        
+Divide       yes   L.D   F10    F0    F6                        no    no
 ------------------------------------------------------------------------------
 -------------------------------Register Status--------------------------------
              F0        F2        F4        F6        F8       F10        R2
@@ -1933,13 +1933,13 @@ DIV.D F10 F0 F6              8             21          22-61             62
 ADD.D F6 F8 F2              13             14          15-16             22
 ------------------------------------------------------------------------------
 -----------------------------Funtion Unit Status------------------------------
-FU          busy    Op    Fi    Fj    Fk    Qj    Qk    Rj    Rk
+FU          busy    Op    Fi    Fj    Fk        Qj        Qk    Rj    Rk
 ------------------------------------------------------------------------------
-Integer       no                                        no    no
-Mult1         no                                        no    no
-Mult2         no                                        no    no
-Add           no                                        no    no
-Divide        no                                        no    no
+Integer       no                                                        
+Mult1         no                                                        
+Mult2         no                                                        
+Add           no                                                        
+Divide        no                                                        
 ------------------------------------------------------------------------------
 -------------------------------Register Status--------------------------------
              F0        F2        F4        F6        F8       F10        R2

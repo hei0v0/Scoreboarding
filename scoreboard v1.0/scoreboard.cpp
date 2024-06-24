@@ -16,7 +16,7 @@ int opt = 0; // 指令数量
 int finishNum=0; // 已完成的指令数量
 int clockCycle=0; // 时钟周期
 
-enum OP { Op_Null, L_D = 1, ADD_D, SUB_D, MULT_D, DIV_D }; // Op_Null:未定义操作数
+enum OP { Op_Null, L_D = 1, ADD_D, SUB_D, MULT_D, DIV_D }; // Op_Null:未定义操作
 string ReOP[] = {"","L.D","ADD.D","SUB.D","MULT.D","DIV.D"};
 enum FU { Fu_Null, Integer = 1, Mult1, Mult2, Add, Divide }; // Fu_Null:未定义功能部件
 string ReFU[] = {"", "Integer", "Mult1", "Mult2", "Add", "Divide"};
@@ -82,10 +82,10 @@ void PrintStatus(){ // 输出
     // 功能部件状态表
     cout << "------------------------------------------------------------------------------" << endl;
     cout << "-----------------------------Funtion Unit Status------------------------------" << endl;
-    cout << setiosflags(ios::left) << setw(10) << "FU" << resetiosflags(ios::left) << setiosflags(ios::right) << setw(6) << "busy" << setw(6) << "Op" << setw(6) << "Fi" << setw(6) << "Fj" << setw(6) << "Fk" << setw(6) << "Qj" << setw(6) << "Qk" << setw(6) << "Rj" << setw(6) << "Rk" << resetiosflags(ios::right) << endl;
+    cout << setiosflags(ios::left) << setw(10) << "FU" << resetiosflags(ios::left) << setiosflags(ios::right) << setw(6) << "busy" << setw(6) << "Op" << setw(6) << "Fi" << setw(6) << "Fj" << setw(6) << "Fk" << setw(10) << "Qj" << setw(10) << "Qk" << setw(6) << "Rj" << setw(6) << "Rk" << resetiosflags(ios::right) << endl;
     cout << "------------------------------------------------------------------------------" << endl;
     for (int i = FU::Integer; i <= FU::Divide; i++){
-        cout << setiosflags(ios::left) << setw(10) << ReFU[i] << resetiosflags(ios::left) << setiosflags(ios::right) << setw(6) << (FuStatus[i].busy ? "yes" : "no") << setw(6) << ReOP[FuStatus[i].Op] << setw(6) << FuStatus[i].Fi << setw(6) << FuStatus[i].Fj << setw(6) << FuStatus[i].Fk << setw(6) << ReFU[FuStatus[i].Qj] << setw(6) << ReFU[FuStatus[i].Qk] << setw(6) << (FuStatus[i].Rj ? "yes" : "no") << setw(6) << (FuStatus[i].Rk ? "yes" : "no") << resetiosflags(ios::right) << endl;
+        cout << setiosflags(ios::left) << setw(10) << ReFU[i] << resetiosflags(ios::left) << setiosflags(ios::right) << setw(6) << (FuStatus[i].busy ? "yes" : "no") << setw(6) << ReOP[FuStatus[i].Op] << setw(6) << FuStatus[i].Fi << setw(6) << FuStatus[i].Fj << setw(6) << FuStatus[i].Fk << setw(10) << ReFU[FuStatus[i].Qj] << setw(10) << ReFU[FuStatus[i].Qk] << setw(6) << (FuStatus[i].Fj != "" ? (FuStatus[i].Rj ? "yes" : "no") : "") << setw(6) << (FuStatus[i].Fk != "" ? (FuStatus[i].Rk ? "yes" : "no") : "") << resetiosflags(ios::right) << endl;
     }
 
     // 结果寄存器状态表
@@ -172,49 +172,42 @@ void getInstruction(){ // 读指令
     }
 }
 
-void issue(InstructionStatus &Ins)
-{ // 判断流出
-    switch (Ins.Op)
-    {
-    case OP::L_D:
-        if (FuStatus[FU::Integer].busy == false && (RegStatus.count(Ins.D) == 0 || RegStatus[Ins.D] == Fu_Null))
-        { // 判断功能部件空闲且没有写后写（WAW）冲突
-            Ins.run = true;
-            Ins.status = Status::IS;
-            Ins.Fu = FU::Integer;
-        }
-        break;
-    case OP::ADD_D:
-    case OP::SUB_D:
-        if (FuStatus[FU::Add].busy == false && (RegStatus.count(Ins.D) == 0 || RegStatus[Ins.D] == Fu_Null))
-        { // 判断功能部件空闲且没有写后写（WAW）冲突
-            Ins.run = true;
-            Ins.status = Status::IS;
-            Ins.Fu = FU::Add;
-        }
-        break;
-    case OP::MULT_D:
-        if (FuStatus[FU::Mult1].busy == false && (RegStatus.count(Ins.D) == 0 || RegStatus[Ins.D] == Fu_Null))
-        { // 判断功能部件空闲且没有写后写（WAW）冲突
-            Ins.run = true;
-            Ins.status = Status::IS;
-            Ins.Fu = FU::Mult1;
-        }
-        else if (FuStatus[FU::Mult2].busy == false && (RegStatus.count(Ins.D) == 0 || RegStatus[Ins.D] == Fu_Null))
-        { // 判断功能部件空闲且没有写后写（WAW）冲突
-            Ins.run = true;
-            Ins.status = Status::IS;
-            Ins.Fu = FU::Mult2;
-        }
-        break;
-    case OP::DIV_D:
-        if (FuStatus[FU::Divide].busy == false && (RegStatus.count(Ins.D) == 0 || RegStatus[Ins.D] == Fu_Null))
-        { // 判断功能部件空闲且没有写后写（WAW）冲突
-            Ins.run = true;
-            Ins.status = Status::IS;
-            Ins.Fu = FU::Divide;
-        }
-        break;
+void issue(InstructionStatus &Ins){ // 判断流出
+    switch (Ins.Op){
+        case OP::L_D:
+            if (FuStatus[FU::Integer].busy == false && (RegStatus.count(Ins.D) == 0 || RegStatus[Ins.D] == Fu_Null)){ // 判断功能部件空闲且没有写后写（WAW）冲突
+                Ins.run = true;
+                Ins.status = Status::IS;
+                Ins.Fu = FU::Integer;
+            }
+            break;
+        case OP::ADD_D:
+        case OP::SUB_D:
+            if (FuStatus[FU::Add].busy == false && (RegStatus.count(Ins.D) == 0 || RegStatus[Ins.D] == Fu_Null)){ // 判断功能部件空闲且没有写后写（WAW）冲突
+                Ins.run = true;
+                Ins.status = Status::IS;
+                Ins.Fu = FU::Add;
+            }
+            break;
+        case OP::MULT_D:
+            if (FuStatus[FU::Mult1].busy == false && (RegStatus.count(Ins.D) == 0 || RegStatus[Ins.D] == Fu_Null)){ // 判断功能部件空闲且没有写后写（WAW）冲突
+                Ins.run = true;
+                Ins.status = Status::IS;
+                Ins.Fu = FU::Mult1;
+            }
+            else if (FuStatus[FU::Mult2].busy == false && (RegStatus.count(Ins.D) == 0 || RegStatus[Ins.D] == Fu_Null)){ // 判断功能部件空闲且没有写后写（WAW）冲突
+                Ins.run = true;
+                Ins.status = Status::IS;
+                Ins.Fu = FU::Mult2;
+            }
+            break;
+        case OP::DIV_D:
+            if (FuStatus[FU::Divide].busy == false && (RegStatus.count(Ins.D) == 0 || RegStatus[Ins.D] == Fu_Null)){ // 判断功能部件空闲且没有写后写（WAW）冲突
+                Ins.run = true;
+                Ins.status = Status::IS;
+                Ins.Fu = FU::Divide;
+            }
+            break;
     }
 }
 
@@ -248,12 +241,12 @@ void runReadOperand(InstructionStatus &Ins){ // 执行读操作数
     FuStatus[Ins.Fu].Qk = FU::Fu_Null;
 }
 
-void Execute(InstructionStatus &Ins){ // 执行
-    if(Ins.status==Status::RO){
+void Execution(InstructionStatus &Ins){ // 执行
+    if(Ins.status==Status::RO){ // 判断执行阶段开始
         Ins.status = Status::EXB;
         Ins.StatusTable[Status::EXB] = clockCycle;
     }
-    if (clockCycle - Ins.StatusTable[Status::EXB]+1==exeT[Ins.Op]){
+    if (clockCycle - Ins.StatusTable[Status::EXB]+1==exeT[Ins.Op]){ // 判断执行阶段结束
         Ins.status = Status::EXE;
         Ins.StatusTable[Status::EXE] = clockCycle;
     }
@@ -274,7 +267,7 @@ void writeResult(InstructionStatus &Ins){ // 判断写结果
     }
 }
 
-void runWriteResult(InstructionStatus &Ins){
+void runWriteResult(InstructionStatus &Ins){ // 执行写结果
     Ins.StatusTable[Status::WR] = clockCycle;
     for (int i = FU::Integer; i <= FU::Divide; i++)
     {
@@ -300,7 +293,7 @@ void runWriteResult(InstructionStatus &Ins){
 
 int main()
 {
-    freopen("input.txt", "r", stdin);    // 生成得数据文件
+    freopen("input.txt", "r", stdin);    // 输入文件
     freopen("output.txt", "w", stdout); // 输出文件
     cin >> opt;
     string str = "\n";
@@ -323,7 +316,7 @@ int main()
                         break;
                     case Status::RO:
                     case Status::EXB:
-                        Execute(instructionStatus[i]);
+                        Execution(instructionStatus[i]);
                         break;
                     case Status::EXE:
                         writeResult(instructionStatus[i]);
