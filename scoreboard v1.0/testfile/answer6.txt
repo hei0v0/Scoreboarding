@@ -6,7 +6,6 @@ Instruction              Issue  Read Operands      Execution   Write Result
 L.D F6 34(R2)                0              0             0               0
 L.D F2 45(R3)                0              0             0               0
 MULT.D F0 F2 F4              0              0             0               0
-SUB.D F8 F6 F2               0              0             0               0
 DIV.D F10 F0 F6              0              0             0               0
 ADD.D F6 F8 F2               0              0             0               0
 ------------------------------------------------------------------------------
@@ -37,7 +36,6 @@ Instruction              Issue  Read Operands      Execution   Write Result
 L.D F6 34(R2)                1              0             0               0
 L.D F2 45(R3)                0              0             0               0
 MULT.D F0 F2 F4              0              0             0               0
-SUB.D F8 F6 F2               0              0             0               0
 DIV.D F10 F0 F6              0              0             0               0
 ADD.D F6 F8 F2               0              0             0               0
 ------------------------------------------------------------------------------
@@ -68,7 +66,6 @@ Instruction              Issue  Read Operands      Execution   Write Result
 L.D F6 34(R2)                1              2             0               0
 L.D F2 45(R3)                0              0             0               0
 MULT.D F0 F2 F4              0              0             0               0
-SUB.D F8 F6 F2               0              0             0               0
 DIV.D F10 F0 F6              0              0             0               0
 ADD.D F6 F8 F2               0              0             0               0
 ------------------------------------------------------------------------------
@@ -99,7 +96,6 @@ Instruction              Issue  Read Operands      Execution   Write Result
 L.D F6 34(R2)                1              2            3-3              0
 L.D F2 45(R3)                0              0             0               0
 MULT.D F0 F2 F4              0              0             0               0
-SUB.D F8 F6 F2               0              0             0               0
 DIV.D F10 F0 F6              0              0             0               0
 ADD.D F6 F8 F2               0              0             0               0
 ------------------------------------------------------------------------------
@@ -130,7 +126,6 @@ Instruction              Issue  Read Operands      Execution   Write Result
 L.D F6 34(R2)                1              2            3-3              4
 L.D F2 45(R3)                0              0             0               0
 MULT.D F0 F2 F4              0              0             0               0
-SUB.D F8 F6 F2               0              0             0               0
 DIV.D F10 F0 F6              0              0             0               0
 ADD.D F6 F8 F2               0              0             0               0
 ------------------------------------------------------------------------------
@@ -161,7 +156,6 @@ Instruction              Issue  Read Operands      Execution   Write Result
 L.D F6 34(R2)                1              2            3-3              4
 L.D F2 45(R3)                5              0             0               0
 MULT.D F0 F2 F4              0              0             0               0
-SUB.D F8 F6 F2               0              0             0               0
 DIV.D F10 F0 F6              0              0             0               0
 ADD.D F6 F8 F2               0              0             0               0
 ------------------------------------------------------------------------------
@@ -192,7 +186,6 @@ Instruction              Issue  Read Operands      Execution   Write Result
 L.D F6 34(R2)                1              2            3-3              4
 L.D F2 45(R3)                5              6             0               0
 MULT.D F0 F2 F4              6              0             0               0
-SUB.D F8 F6 F2               0              0             0               0
 DIV.D F10 F0 F6              0              0             0               0
 ADD.D F6 F8 F2               0              0             0               0
 ------------------------------------------------------------------------------
@@ -223,8 +216,7 @@ Instruction              Issue  Read Operands      Execution   Write Result
 L.D F6 34(R2)                1              2            3-3              4
 L.D F2 45(R3)                5              6            7-7              0
 MULT.D F0 F2 F4              6              0             0               0
-SUB.D F8 F6 F2               7              0             0               0
-DIV.D F10 F0 F6              0              0             0               0
+DIV.D F10 F0 F6              7              0             0               0
 ADD.D F6 F8 F2               0              0             0               0
 ------------------------------------------------------------------------------
 -----------------------------Funtion Unit Status------------------------------
@@ -233,13 +225,13 @@ FU          busy    Op    Fi    Fj    Fk        Qj        Qk    Rj    Rk
 Integer      yes   L.D    F2          R3                              no
 Mult1        yes   L.D    F0    F2    F4   Integer              no   yes
 Mult2         no                                                        
-Add          yes   L.D    F8    F6    F2             Integer   yes    no
-Divide        no                                                        
+Add           no                                                        
+Divide       yes   L.D   F10    F0    F6     Mult1              no   yes
 ------------------------------------------------------------------------------
 -------------------------------Register Status--------------------------------
              F0        F2        F4        F6        F8       F10        R2
 ------------------------------------------------------------------------------
-FU        Mult1   Integer                           Add                    
+FU        Mult1   Integer                                  Divide          
 ------------------------------------------------------------------------------
              R3
 ------------------------------------------------------------------------------
@@ -254,9 +246,8 @@ Instruction              Issue  Read Operands      Execution   Write Result
 L.D F6 34(R2)                1              2            3-3              4
 L.D F2 45(R3)                5              6            7-7              8
 MULT.D F0 F2 F4              6              0             0               0
-SUB.D F8 F6 F2               7              0             0               0
-DIV.D F10 F0 F6              8              0             0               0
-ADD.D F6 F8 F2               0              0             0               0
+DIV.D F10 F0 F6              7              0             0               0
+ADD.D F6 F8 F2               8              0             0               0
 ------------------------------------------------------------------------------
 -----------------------------Funtion Unit Status------------------------------
 FU          busy    Op    Fi    Fj    Fk        Qj        Qk    Rj    Rk
@@ -264,13 +255,13 @@ FU          busy    Op    Fi    Fj    Fk        Qj        Qk    Rj    Rk
 Integer       no                                                        
 Mult1        yes   L.D    F0    F2    F4   Integer             yes   yes
 Mult2         no                                                        
-Add          yes   L.D    F8    F6    F2             Integer   yes   yes
+Add          yes   L.D    F6    F8    F2                       yes   yes
 Divide       yes   L.D   F10    F0    F6     Mult1              no   yes
 ------------------------------------------------------------------------------
 -------------------------------Register Status--------------------------------
              F0        F2        F4        F6        F8       F10        R2
 ------------------------------------------------------------------------------
-FU        Mult1                                     Add    Divide          
+FU        Mult1                           Add              Divide          
 ------------------------------------------------------------------------------
              R3
 ------------------------------------------------------------------------------
@@ -285,9 +276,8 @@ Instruction              Issue  Read Operands      Execution   Write Result
 L.D F6 34(R2)                1              2            3-3              4
 L.D F2 45(R3)                5              6            7-7              8
 MULT.D F0 F2 F4              6              9             0               0
-SUB.D F8 F6 F2               7              9             0               0
-DIV.D F10 F0 F6              8              0             0               0
-ADD.D F6 F8 F2               0              0             0               0
+DIV.D F10 F0 F6              7              0             0               0
+ADD.D F6 F8 F2               8              9             0               0
 ------------------------------------------------------------------------------
 -----------------------------Funtion Unit Status------------------------------
 FU          busy    Op    Fi    Fj    Fk        Qj        Qk    Rj    Rk
@@ -295,13 +285,13 @@ FU          busy    Op    Fi    Fj    Fk        Qj        Qk    Rj    Rk
 Integer       no                                                        
 Mult1        yes   L.D    F0    F2    F4                        no    no
 Mult2         no                                                        
-Add          yes   L.D    F8    F6    F2                        no    no
+Add          yes   L.D    F6    F8    F2                        no    no
 Divide       yes   L.D   F10    F0    F6     Mult1              no   yes
 ------------------------------------------------------------------------------
 -------------------------------Register Status--------------------------------
              F0        F2        F4        F6        F8       F10        R2
 ------------------------------------------------------------------------------
-FU        Mult1                                     Add    Divide          
+FU        Mult1                           Add              Divide          
 ------------------------------------------------------------------------------
              R3
 ------------------------------------------------------------------------------
@@ -316,9 +306,8 @@ Instruction              Issue  Read Operands      Execution   Write Result
 L.D F6 34(R2)                1              2            3-3              4
 L.D F2 45(R3)                5              6            7-7              8
 MULT.D F0 F2 F4              6              9           10-               0
-SUB.D F8 F6 F2               7              9           10-               0
-DIV.D F10 F0 F6              8              0             0               0
-ADD.D F6 F8 F2               0              0             0               0
+DIV.D F10 F0 F6              7              0             0               0
+ADD.D F6 F8 F2               8              9           10-               0
 ------------------------------------------------------------------------------
 -----------------------------Funtion Unit Status------------------------------
 FU          busy    Op    Fi    Fj    Fk        Qj        Qk    Rj    Rk
@@ -326,13 +315,13 @@ FU          busy    Op    Fi    Fj    Fk        Qj        Qk    Rj    Rk
 Integer       no                                                        
 Mult1        yes   L.D    F0    F2    F4                        no    no
 Mult2         no                                                        
-Add          yes   L.D    F8    F6    F2                        no    no
+Add          yes   L.D    F6    F8    F2                        no    no
 Divide       yes   L.D   F10    F0    F6     Mult1              no   yes
 ------------------------------------------------------------------------------
 -------------------------------Register Status--------------------------------
              F0        F2        F4        F6        F8       F10        R2
 ------------------------------------------------------------------------------
-FU        Mult1                                     Add    Divide          
+FU        Mult1                           Add              Divide          
 ------------------------------------------------------------------------------
              R3
 ------------------------------------------------------------------------------
@@ -347,9 +336,8 @@ Instruction              Issue  Read Operands      Execution   Write Result
 L.D F6 34(R2)                1              2            3-3              4
 L.D F2 45(R3)                5              6            7-7              8
 MULT.D F0 F2 F4              6              9           10-               0
-SUB.D F8 F6 F2               7              9          10-11              0
-DIV.D F10 F0 F6              8              0             0               0
-ADD.D F6 F8 F2               0              0             0               0
+DIV.D F10 F0 F6              7              0             0               0
+ADD.D F6 F8 F2               8              9          10-11              0
 ------------------------------------------------------------------------------
 -----------------------------Funtion Unit Status------------------------------
 FU          busy    Op    Fi    Fj    Fk        Qj        Qk    Rj    Rk
@@ -357,13 +345,13 @@ FU          busy    Op    Fi    Fj    Fk        Qj        Qk    Rj    Rk
 Integer       no                                                        
 Mult1        yes   L.D    F0    F2    F4                        no    no
 Mult2         no                                                        
-Add          yes   L.D    F8    F6    F2                        no    no
+Add          yes   L.D    F6    F8    F2                        no    no
 Divide       yes   L.D   F10    F0    F6     Mult1              no   yes
 ------------------------------------------------------------------------------
 -------------------------------Register Status--------------------------------
              F0        F2        F4        F6        F8       F10        R2
 ------------------------------------------------------------------------------
-FU        Mult1                                     Add    Divide          
+FU        Mult1                           Add              Divide          
 ------------------------------------------------------------------------------
              R3
 ------------------------------------------------------------------------------
@@ -378,9 +366,8 @@ Instruction              Issue  Read Operands      Execution   Write Result
 L.D F6 34(R2)                1              2            3-3              4
 L.D F2 45(R3)                5              6            7-7              8
 MULT.D F0 F2 F4              6              9           10-               0
-SUB.D F8 F6 F2               7              9          10-11             12
-DIV.D F10 F0 F6              8              0             0               0
-ADD.D F6 F8 F2               0              0             0               0
+DIV.D F10 F0 F6              7              0             0               0
+ADD.D F6 F8 F2               8              9          10-11              0
 ------------------------------------------------------------------------------
 -----------------------------Funtion Unit Status------------------------------
 FU          busy    Op    Fi    Fj    Fk        Qj        Qk    Rj    Rk
@@ -388,13 +375,13 @@ FU          busy    Op    Fi    Fj    Fk        Qj        Qk    Rj    Rk
 Integer       no                                                        
 Mult1        yes   L.D    F0    F2    F4                        no    no
 Mult2         no                                                        
-Add           no                                                        
+Add          yes   L.D    F6    F8    F2                        no    no
 Divide       yes   L.D   F10    F0    F6     Mult1              no   yes
 ------------------------------------------------------------------------------
 -------------------------------Register Status--------------------------------
              F0        F2        F4        F6        F8       F10        R2
 ------------------------------------------------------------------------------
-FU        Mult1                                            Divide          
+FU        Mult1                           Add              Divide          
 ------------------------------------------------------------------------------
              R3
 ------------------------------------------------------------------------------
@@ -409,9 +396,8 @@ Instruction              Issue  Read Operands      Execution   Write Result
 L.D F6 34(R2)                1              2            3-3              4
 L.D F2 45(R3)                5              6            7-7              8
 MULT.D F0 F2 F4              6              9           10-               0
-SUB.D F8 F6 F2               7              9          10-11             12
-DIV.D F10 F0 F6              8              0             0               0
-ADD.D F6 F8 F2              13              0             0               0
+DIV.D F10 F0 F6              7              0             0               0
+ADD.D F6 F8 F2               8              9          10-11              0
 ------------------------------------------------------------------------------
 -----------------------------Funtion Unit Status------------------------------
 FU          busy    Op    Fi    Fj    Fk        Qj        Qk    Rj    Rk
@@ -419,7 +405,7 @@ FU          busy    Op    Fi    Fj    Fk        Qj        Qk    Rj    Rk
 Integer       no                                                        
 Mult1        yes   L.D    F0    F2    F4                        no    no
 Mult2         no                                                        
-Add          yes   L.D    F6    F8    F2                       yes   yes
+Add          yes   L.D    F6    F8    F2                        no    no
 Divide       yes   L.D   F10    F0    F6     Mult1              no   yes
 ------------------------------------------------------------------------------
 -------------------------------Register Status--------------------------------
@@ -440,9 +426,8 @@ Instruction              Issue  Read Operands      Execution   Write Result
 L.D F6 34(R2)                1              2            3-3              4
 L.D F2 45(R3)                5              6            7-7              8
 MULT.D F0 F2 F4              6              9           10-               0
-SUB.D F8 F6 F2               7              9          10-11             12
-DIV.D F10 F0 F6              8              0             0               0
-ADD.D F6 F8 F2              13             14             0               0
+DIV.D F10 F0 F6              7              0             0               0
+ADD.D F6 F8 F2               8              9          10-11              0
 ------------------------------------------------------------------------------
 -----------------------------Funtion Unit Status------------------------------
 FU          busy    Op    Fi    Fj    Fk        Qj        Qk    Rj    Rk
@@ -471,9 +456,8 @@ Instruction              Issue  Read Operands      Execution   Write Result
 L.D F6 34(R2)                1              2            3-3              4
 L.D F2 45(R3)                5              6            7-7              8
 MULT.D F0 F2 F4              6              9           10-               0
-SUB.D F8 F6 F2               7              9          10-11             12
-DIV.D F10 F0 F6              8              0             0               0
-ADD.D F6 F8 F2              13             14           15-               0
+DIV.D F10 F0 F6              7              0             0               0
+ADD.D F6 F8 F2               8              9          10-11              0
 ------------------------------------------------------------------------------
 -----------------------------Funtion Unit Status------------------------------
 FU          busy    Op    Fi    Fj    Fk        Qj        Qk    Rj    Rk
@@ -502,9 +486,8 @@ Instruction              Issue  Read Operands      Execution   Write Result
 L.D F6 34(R2)                1              2            3-3              4
 L.D F2 45(R3)                5              6            7-7              8
 MULT.D F0 F2 F4              6              9           10-               0
-SUB.D F8 F6 F2               7              9          10-11             12
-DIV.D F10 F0 F6              8              0             0               0
-ADD.D F6 F8 F2              13             14          15-16              0
+DIV.D F10 F0 F6              7              0             0               0
+ADD.D F6 F8 F2               8              9          10-11              0
 ------------------------------------------------------------------------------
 -----------------------------Funtion Unit Status------------------------------
 FU          busy    Op    Fi    Fj    Fk        Qj        Qk    Rj    Rk
@@ -533,9 +516,8 @@ Instruction              Issue  Read Operands      Execution   Write Result
 L.D F6 34(R2)                1              2            3-3              4
 L.D F2 45(R3)                5              6            7-7              8
 MULT.D F0 F2 F4              6              9           10-               0
-SUB.D F8 F6 F2               7              9          10-11             12
-DIV.D F10 F0 F6              8              0             0               0
-ADD.D F6 F8 F2              13             14          15-16              0
+DIV.D F10 F0 F6              7              0             0               0
+ADD.D F6 F8 F2               8              9          10-11              0
 ------------------------------------------------------------------------------
 -----------------------------Funtion Unit Status------------------------------
 FU          busy    Op    Fi    Fj    Fk        Qj        Qk    Rj    Rk
@@ -564,9 +546,8 @@ Instruction              Issue  Read Operands      Execution   Write Result
 L.D F6 34(R2)                1              2            3-3              4
 L.D F2 45(R3)                5              6            7-7              8
 MULT.D F0 F2 F4              6              9           10-               0
-SUB.D F8 F6 F2               7              9          10-11             12
-DIV.D F10 F0 F6              8              0             0               0
-ADD.D F6 F8 F2              13             14          15-16              0
+DIV.D F10 F0 F6              7              0             0               0
+ADD.D F6 F8 F2               8              9          10-11              0
 ------------------------------------------------------------------------------
 -----------------------------Funtion Unit Status------------------------------
 FU          busy    Op    Fi    Fj    Fk        Qj        Qk    Rj    Rk
@@ -595,9 +576,8 @@ Instruction              Issue  Read Operands      Execution   Write Result
 L.D F6 34(R2)                1              2            3-3              4
 L.D F2 45(R3)                5              6            7-7              8
 MULT.D F0 F2 F4              6              9          10-19              0
-SUB.D F8 F6 F2               7              9          10-11             12
-DIV.D F10 F0 F6              8              0             0               0
-ADD.D F6 F8 F2              13             14          15-16              0
+DIV.D F10 F0 F6              7              0             0               0
+ADD.D F6 F8 F2               8              9          10-11              0
 ------------------------------------------------------------------------------
 -----------------------------Funtion Unit Status------------------------------
 FU          busy    Op    Fi    Fj    Fk        Qj        Qk    Rj    Rk
@@ -626,9 +606,8 @@ Instruction              Issue  Read Operands      Execution   Write Result
 L.D F6 34(R2)                1              2            3-3              4
 L.D F2 45(R3)                5              6            7-7              8
 MULT.D F0 F2 F4              6              9          10-19             20
-SUB.D F8 F6 F2               7              9          10-11             12
-DIV.D F10 F0 F6              8              0             0               0
-ADD.D F6 F8 F2              13             14          15-16              0
+DIV.D F10 F0 F6              7              0             0               0
+ADD.D F6 F8 F2               8              9          10-11              0
 ------------------------------------------------------------------------------
 -----------------------------Funtion Unit Status------------------------------
 FU          busy    Op    Fi    Fj    Fk        Qj        Qk    Rj    Rk
@@ -657,9 +636,8 @@ Instruction              Issue  Read Operands      Execution   Write Result
 L.D F6 34(R2)                1              2            3-3              4
 L.D F2 45(R3)                5              6            7-7              8
 MULT.D F0 F2 F4              6              9          10-19             20
-SUB.D F8 F6 F2               7              9          10-11             12
-DIV.D F10 F0 F6              8             21             0               0
-ADD.D F6 F8 F2              13             14          15-16              0
+DIV.D F10 F0 F6              7             21             0               0
+ADD.D F6 F8 F2               8              9          10-11              0
 ------------------------------------------------------------------------------
 -----------------------------Funtion Unit Status------------------------------
 FU          busy    Op    Fi    Fj    Fk        Qj        Qk    Rj    Rk
@@ -688,9 +666,8 @@ Instruction              Issue  Read Operands      Execution   Write Result
 L.D F6 34(R2)                1              2            3-3              4
 L.D F2 45(R3)                5              6            7-7              8
 MULT.D F0 F2 F4              6              9          10-19             20
-SUB.D F8 F6 F2               7              9          10-11             12
-DIV.D F10 F0 F6              8             21           22-               0
-ADD.D F6 F8 F2              13             14          15-16             22
+DIV.D F10 F0 F6              7             21           22-               0
+ADD.D F6 F8 F2               8              9          10-11             22
 ------------------------------------------------------------------------------
 -----------------------------Funtion Unit Status------------------------------
 FU          busy    Op    Fi    Fj    Fk        Qj        Qk    Rj    Rk
@@ -719,9 +696,8 @@ Instruction              Issue  Read Operands      Execution   Write Result
 L.D F6 34(R2)                1              2            3-3              4
 L.D F2 45(R3)                5              6            7-7              8
 MULT.D F0 F2 F4              6              9          10-19             20
-SUB.D F8 F6 F2               7              9          10-11             12
-DIV.D F10 F0 F6              8             21           22-               0
-ADD.D F6 F8 F2              13             14          15-16             22
+DIV.D F10 F0 F6              7             21           22-               0
+ADD.D F6 F8 F2               8              9          10-11             22
 ------------------------------------------------------------------------------
 -----------------------------Funtion Unit Status------------------------------
 FU          busy    Op    Fi    Fj    Fk        Qj        Qk    Rj    Rk
@@ -750,9 +726,8 @@ Instruction              Issue  Read Operands      Execution   Write Result
 L.D F6 34(R2)                1              2            3-3              4
 L.D F2 45(R3)                5              6            7-7              8
 MULT.D F0 F2 F4              6              9          10-19             20
-SUB.D F8 F6 F2               7              9          10-11             12
-DIV.D F10 F0 F6              8             21           22-               0
-ADD.D F6 F8 F2              13             14          15-16             22
+DIV.D F10 F0 F6              7             21           22-               0
+ADD.D F6 F8 F2               8              9          10-11             22
 ------------------------------------------------------------------------------
 -----------------------------Funtion Unit Status------------------------------
 FU          busy    Op    Fi    Fj    Fk        Qj        Qk    Rj    Rk
@@ -781,9 +756,8 @@ Instruction              Issue  Read Operands      Execution   Write Result
 L.D F6 34(R2)                1              2            3-3              4
 L.D F2 45(R3)                5              6            7-7              8
 MULT.D F0 F2 F4              6              9          10-19             20
-SUB.D F8 F6 F2               7              9          10-11             12
-DIV.D F10 F0 F6              8             21           22-               0
-ADD.D F6 F8 F2              13             14          15-16             22
+DIV.D F10 F0 F6              7             21           22-               0
+ADD.D F6 F8 F2               8              9          10-11             22
 ------------------------------------------------------------------------------
 -----------------------------Funtion Unit Status------------------------------
 FU          busy    Op    Fi    Fj    Fk        Qj        Qk    Rj    Rk
@@ -812,9 +786,8 @@ Instruction              Issue  Read Operands      Execution   Write Result
 L.D F6 34(R2)                1              2            3-3              4
 L.D F2 45(R3)                5              6            7-7              8
 MULT.D F0 F2 F4              6              9          10-19             20
-SUB.D F8 F6 F2               7              9          10-11             12
-DIV.D F10 F0 F6              8             21           22-               0
-ADD.D F6 F8 F2              13             14          15-16             22
+DIV.D F10 F0 F6              7             21           22-               0
+ADD.D F6 F8 F2               8              9          10-11             22
 ------------------------------------------------------------------------------
 -----------------------------Funtion Unit Status------------------------------
 FU          busy    Op    Fi    Fj    Fk        Qj        Qk    Rj    Rk
@@ -843,9 +816,8 @@ Instruction              Issue  Read Operands      Execution   Write Result
 L.D F6 34(R2)                1              2            3-3              4
 L.D F2 45(R3)                5              6            7-7              8
 MULT.D F0 F2 F4              6              9          10-19             20
-SUB.D F8 F6 F2               7              9          10-11             12
-DIV.D F10 F0 F6              8             21           22-               0
-ADD.D F6 F8 F2              13             14          15-16             22
+DIV.D F10 F0 F6              7             21           22-               0
+ADD.D F6 F8 F2               8              9          10-11             22
 ------------------------------------------------------------------------------
 -----------------------------Funtion Unit Status------------------------------
 FU          busy    Op    Fi    Fj    Fk        Qj        Qk    Rj    Rk
@@ -874,9 +846,8 @@ Instruction              Issue  Read Operands      Execution   Write Result
 L.D F6 34(R2)                1              2            3-3              4
 L.D F2 45(R3)                5              6            7-7              8
 MULT.D F0 F2 F4              6              9          10-19             20
-SUB.D F8 F6 F2               7              9          10-11             12
-DIV.D F10 F0 F6              8             21           22-               0
-ADD.D F6 F8 F2              13             14          15-16             22
+DIV.D F10 F0 F6              7             21           22-               0
+ADD.D F6 F8 F2               8              9          10-11             22
 ------------------------------------------------------------------------------
 -----------------------------Funtion Unit Status------------------------------
 FU          busy    Op    Fi    Fj    Fk        Qj        Qk    Rj    Rk
@@ -905,9 +876,8 @@ Instruction              Issue  Read Operands      Execution   Write Result
 L.D F6 34(R2)                1              2            3-3              4
 L.D F2 45(R3)                5              6            7-7              8
 MULT.D F0 F2 F4              6              9          10-19             20
-SUB.D F8 F6 F2               7              9          10-11             12
-DIV.D F10 F0 F6              8             21           22-               0
-ADD.D F6 F8 F2              13             14          15-16             22
+DIV.D F10 F0 F6              7             21           22-               0
+ADD.D F6 F8 F2               8              9          10-11             22
 ------------------------------------------------------------------------------
 -----------------------------Funtion Unit Status------------------------------
 FU          busy    Op    Fi    Fj    Fk        Qj        Qk    Rj    Rk
@@ -936,9 +906,8 @@ Instruction              Issue  Read Operands      Execution   Write Result
 L.D F6 34(R2)                1              2            3-3              4
 L.D F2 45(R3)                5              6            7-7              8
 MULT.D F0 F2 F4              6              9          10-19             20
-SUB.D F8 F6 F2               7              9          10-11             12
-DIV.D F10 F0 F6              8             21           22-               0
-ADD.D F6 F8 F2              13             14          15-16             22
+DIV.D F10 F0 F6              7             21           22-               0
+ADD.D F6 F8 F2               8              9          10-11             22
 ------------------------------------------------------------------------------
 -----------------------------Funtion Unit Status------------------------------
 FU          busy    Op    Fi    Fj    Fk        Qj        Qk    Rj    Rk
@@ -967,9 +936,8 @@ Instruction              Issue  Read Operands      Execution   Write Result
 L.D F6 34(R2)                1              2            3-3              4
 L.D F2 45(R3)                5              6            7-7              8
 MULT.D F0 F2 F4              6              9          10-19             20
-SUB.D F8 F6 F2               7              9          10-11             12
-DIV.D F10 F0 F6              8             21           22-               0
-ADD.D F6 F8 F2              13             14          15-16             22
+DIV.D F10 F0 F6              7             21           22-               0
+ADD.D F6 F8 F2               8              9          10-11             22
 ------------------------------------------------------------------------------
 -----------------------------Funtion Unit Status------------------------------
 FU          busy    Op    Fi    Fj    Fk        Qj        Qk    Rj    Rk
@@ -998,9 +966,8 @@ Instruction              Issue  Read Operands      Execution   Write Result
 L.D F6 34(R2)                1              2            3-3              4
 L.D F2 45(R3)                5              6            7-7              8
 MULT.D F0 F2 F4              6              9          10-19             20
-SUB.D F8 F6 F2               7              9          10-11             12
-DIV.D F10 F0 F6              8             21           22-               0
-ADD.D F6 F8 F2              13             14          15-16             22
+DIV.D F10 F0 F6              7             21           22-               0
+ADD.D F6 F8 F2               8              9          10-11             22
 ------------------------------------------------------------------------------
 -----------------------------Funtion Unit Status------------------------------
 FU          busy    Op    Fi    Fj    Fk        Qj        Qk    Rj    Rk
@@ -1029,9 +996,8 @@ Instruction              Issue  Read Operands      Execution   Write Result
 L.D F6 34(R2)                1              2            3-3              4
 L.D F2 45(R3)                5              6            7-7              8
 MULT.D F0 F2 F4              6              9          10-19             20
-SUB.D F8 F6 F2               7              9          10-11             12
-DIV.D F10 F0 F6              8             21           22-               0
-ADD.D F6 F8 F2              13             14          15-16             22
+DIV.D F10 F0 F6              7             21           22-               0
+ADD.D F6 F8 F2               8              9          10-11             22
 ------------------------------------------------------------------------------
 -----------------------------Funtion Unit Status------------------------------
 FU          busy    Op    Fi    Fj    Fk        Qj        Qk    Rj    Rk
@@ -1060,9 +1026,8 @@ Instruction              Issue  Read Operands      Execution   Write Result
 L.D F6 34(R2)                1              2            3-3              4
 L.D F2 45(R3)                5              6            7-7              8
 MULT.D F0 F2 F4              6              9          10-19             20
-SUB.D F8 F6 F2               7              9          10-11             12
-DIV.D F10 F0 F6              8             21           22-               0
-ADD.D F6 F8 F2              13             14          15-16             22
+DIV.D F10 F0 F6              7             21           22-               0
+ADD.D F6 F8 F2               8              9          10-11             22
 ------------------------------------------------------------------------------
 -----------------------------Funtion Unit Status------------------------------
 FU          busy    Op    Fi    Fj    Fk        Qj        Qk    Rj    Rk
@@ -1091,9 +1056,8 @@ Instruction              Issue  Read Operands      Execution   Write Result
 L.D F6 34(R2)                1              2            3-3              4
 L.D F2 45(R3)                5              6            7-7              8
 MULT.D F0 F2 F4              6              9          10-19             20
-SUB.D F8 F6 F2               7              9          10-11             12
-DIV.D F10 F0 F6              8             21           22-               0
-ADD.D F6 F8 F2              13             14          15-16             22
+DIV.D F10 F0 F6              7             21           22-               0
+ADD.D F6 F8 F2               8              9          10-11             22
 ------------------------------------------------------------------------------
 -----------------------------Funtion Unit Status------------------------------
 FU          busy    Op    Fi    Fj    Fk        Qj        Qk    Rj    Rk
@@ -1122,9 +1086,8 @@ Instruction              Issue  Read Operands      Execution   Write Result
 L.D F6 34(R2)                1              2            3-3              4
 L.D F2 45(R3)                5              6            7-7              8
 MULT.D F0 F2 F4              6              9          10-19             20
-SUB.D F8 F6 F2               7              9          10-11             12
-DIV.D F10 F0 F6              8             21           22-               0
-ADD.D F6 F8 F2              13             14          15-16             22
+DIV.D F10 F0 F6              7             21           22-               0
+ADD.D F6 F8 F2               8              9          10-11             22
 ------------------------------------------------------------------------------
 -----------------------------Funtion Unit Status------------------------------
 FU          busy    Op    Fi    Fj    Fk        Qj        Qk    Rj    Rk
@@ -1153,9 +1116,8 @@ Instruction              Issue  Read Operands      Execution   Write Result
 L.D F6 34(R2)                1              2            3-3              4
 L.D F2 45(R3)                5              6            7-7              8
 MULT.D F0 F2 F4              6              9          10-19             20
-SUB.D F8 F6 F2               7              9          10-11             12
-DIV.D F10 F0 F6              8             21           22-               0
-ADD.D F6 F8 F2              13             14          15-16             22
+DIV.D F10 F0 F6              7             21           22-               0
+ADD.D F6 F8 F2               8              9          10-11             22
 ------------------------------------------------------------------------------
 -----------------------------Funtion Unit Status------------------------------
 FU          busy    Op    Fi    Fj    Fk        Qj        Qk    Rj    Rk
@@ -1184,9 +1146,8 @@ Instruction              Issue  Read Operands      Execution   Write Result
 L.D F6 34(R2)                1              2            3-3              4
 L.D F2 45(R3)                5              6            7-7              8
 MULT.D F0 F2 F4              6              9          10-19             20
-SUB.D F8 F6 F2               7              9          10-11             12
-DIV.D F10 F0 F6              8             21           22-               0
-ADD.D F6 F8 F2              13             14          15-16             22
+DIV.D F10 F0 F6              7             21           22-               0
+ADD.D F6 F8 F2               8              9          10-11             22
 ------------------------------------------------------------------------------
 -----------------------------Funtion Unit Status------------------------------
 FU          busy    Op    Fi    Fj    Fk        Qj        Qk    Rj    Rk
@@ -1215,9 +1176,8 @@ Instruction              Issue  Read Operands      Execution   Write Result
 L.D F6 34(R2)                1              2            3-3              4
 L.D F2 45(R3)                5              6            7-7              8
 MULT.D F0 F2 F4              6              9          10-19             20
-SUB.D F8 F6 F2               7              9          10-11             12
-DIV.D F10 F0 F6              8             21           22-               0
-ADD.D F6 F8 F2              13             14          15-16             22
+DIV.D F10 F0 F6              7             21           22-               0
+ADD.D F6 F8 F2               8              9          10-11             22
 ------------------------------------------------------------------------------
 -----------------------------Funtion Unit Status------------------------------
 FU          busy    Op    Fi    Fj    Fk        Qj        Qk    Rj    Rk
@@ -1246,9 +1206,8 @@ Instruction              Issue  Read Operands      Execution   Write Result
 L.D F6 34(R2)                1              2            3-3              4
 L.D F2 45(R3)                5              6            7-7              8
 MULT.D F0 F2 F4              6              9          10-19             20
-SUB.D F8 F6 F2               7              9          10-11             12
-DIV.D F10 F0 F6              8             21           22-               0
-ADD.D F6 F8 F2              13             14          15-16             22
+DIV.D F10 F0 F6              7             21           22-               0
+ADD.D F6 F8 F2               8              9          10-11             22
 ------------------------------------------------------------------------------
 -----------------------------Funtion Unit Status------------------------------
 FU          busy    Op    Fi    Fj    Fk        Qj        Qk    Rj    Rk
@@ -1277,9 +1236,8 @@ Instruction              Issue  Read Operands      Execution   Write Result
 L.D F6 34(R2)                1              2            3-3              4
 L.D F2 45(R3)                5              6            7-7              8
 MULT.D F0 F2 F4              6              9          10-19             20
-SUB.D F8 F6 F2               7              9          10-11             12
-DIV.D F10 F0 F6              8             21           22-               0
-ADD.D F6 F8 F2              13             14          15-16             22
+DIV.D F10 F0 F6              7             21           22-               0
+ADD.D F6 F8 F2               8              9          10-11             22
 ------------------------------------------------------------------------------
 -----------------------------Funtion Unit Status------------------------------
 FU          busy    Op    Fi    Fj    Fk        Qj        Qk    Rj    Rk
@@ -1308,9 +1266,8 @@ Instruction              Issue  Read Operands      Execution   Write Result
 L.D F6 34(R2)                1              2            3-3              4
 L.D F2 45(R3)                5              6            7-7              8
 MULT.D F0 F2 F4              6              9          10-19             20
-SUB.D F8 F6 F2               7              9          10-11             12
-DIV.D F10 F0 F6              8             21           22-               0
-ADD.D F6 F8 F2              13             14          15-16             22
+DIV.D F10 F0 F6              7             21           22-               0
+ADD.D F6 F8 F2               8              9          10-11             22
 ------------------------------------------------------------------------------
 -----------------------------Funtion Unit Status------------------------------
 FU          busy    Op    Fi    Fj    Fk        Qj        Qk    Rj    Rk
@@ -1339,9 +1296,8 @@ Instruction              Issue  Read Operands      Execution   Write Result
 L.D F6 34(R2)                1              2            3-3              4
 L.D F2 45(R3)                5              6            7-7              8
 MULT.D F0 F2 F4              6              9          10-19             20
-SUB.D F8 F6 F2               7              9          10-11             12
-DIV.D F10 F0 F6              8             21           22-               0
-ADD.D F6 F8 F2              13             14          15-16             22
+DIV.D F10 F0 F6              7             21           22-               0
+ADD.D F6 F8 F2               8              9          10-11             22
 ------------------------------------------------------------------------------
 -----------------------------Funtion Unit Status------------------------------
 FU          busy    Op    Fi    Fj    Fk        Qj        Qk    Rj    Rk
@@ -1370,9 +1326,8 @@ Instruction              Issue  Read Operands      Execution   Write Result
 L.D F6 34(R2)                1              2            3-3              4
 L.D F2 45(R3)                5              6            7-7              8
 MULT.D F0 F2 F4              6              9          10-19             20
-SUB.D F8 F6 F2               7              9          10-11             12
-DIV.D F10 F0 F6              8             21           22-               0
-ADD.D F6 F8 F2              13             14          15-16             22
+DIV.D F10 F0 F6              7             21           22-               0
+ADD.D F6 F8 F2               8              9          10-11             22
 ------------------------------------------------------------------------------
 -----------------------------Funtion Unit Status------------------------------
 FU          busy    Op    Fi    Fj    Fk        Qj        Qk    Rj    Rk
@@ -1401,9 +1356,8 @@ Instruction              Issue  Read Operands      Execution   Write Result
 L.D F6 34(R2)                1              2            3-3              4
 L.D F2 45(R3)                5              6            7-7              8
 MULT.D F0 F2 F4              6              9          10-19             20
-SUB.D F8 F6 F2               7              9          10-11             12
-DIV.D F10 F0 F6              8             21           22-               0
-ADD.D F6 F8 F2              13             14          15-16             22
+DIV.D F10 F0 F6              7             21           22-               0
+ADD.D F6 F8 F2               8              9          10-11             22
 ------------------------------------------------------------------------------
 -----------------------------Funtion Unit Status------------------------------
 FU          busy    Op    Fi    Fj    Fk        Qj        Qk    Rj    Rk
@@ -1432,9 +1386,8 @@ Instruction              Issue  Read Operands      Execution   Write Result
 L.D F6 34(R2)                1              2            3-3              4
 L.D F2 45(R3)                5              6            7-7              8
 MULT.D F0 F2 F4              6              9          10-19             20
-SUB.D F8 F6 F2               7              9          10-11             12
-DIV.D F10 F0 F6              8             21           22-               0
-ADD.D F6 F8 F2              13             14          15-16             22
+DIV.D F10 F0 F6              7             21           22-               0
+ADD.D F6 F8 F2               8              9          10-11             22
 ------------------------------------------------------------------------------
 -----------------------------Funtion Unit Status------------------------------
 FU          busy    Op    Fi    Fj    Fk        Qj        Qk    Rj    Rk
@@ -1463,9 +1416,8 @@ Instruction              Issue  Read Operands      Execution   Write Result
 L.D F6 34(R2)                1              2            3-3              4
 L.D F2 45(R3)                5              6            7-7              8
 MULT.D F0 F2 F4              6              9          10-19             20
-SUB.D F8 F6 F2               7              9          10-11             12
-DIV.D F10 F0 F6              8             21           22-               0
-ADD.D F6 F8 F2              13             14          15-16             22
+DIV.D F10 F0 F6              7             21           22-               0
+ADD.D F6 F8 F2               8              9          10-11             22
 ------------------------------------------------------------------------------
 -----------------------------Funtion Unit Status------------------------------
 FU          busy    Op    Fi    Fj    Fk        Qj        Qk    Rj    Rk
@@ -1494,9 +1446,8 @@ Instruction              Issue  Read Operands      Execution   Write Result
 L.D F6 34(R2)                1              2            3-3              4
 L.D F2 45(R3)                5              6            7-7              8
 MULT.D F0 F2 F4              6              9          10-19             20
-SUB.D F8 F6 F2               7              9          10-11             12
-DIV.D F10 F0 F6              8             21           22-               0
-ADD.D F6 F8 F2              13             14          15-16             22
+DIV.D F10 F0 F6              7             21           22-               0
+ADD.D F6 F8 F2               8              9          10-11             22
 ------------------------------------------------------------------------------
 -----------------------------Funtion Unit Status------------------------------
 FU          busy    Op    Fi    Fj    Fk        Qj        Qk    Rj    Rk
@@ -1525,9 +1476,8 @@ Instruction              Issue  Read Operands      Execution   Write Result
 L.D F6 34(R2)                1              2            3-3              4
 L.D F2 45(R3)                5              6            7-7              8
 MULT.D F0 F2 F4              6              9          10-19             20
-SUB.D F8 F6 F2               7              9          10-11             12
-DIV.D F10 F0 F6              8             21           22-               0
-ADD.D F6 F8 F2              13             14          15-16             22
+DIV.D F10 F0 F6              7             21           22-               0
+ADD.D F6 F8 F2               8              9          10-11             22
 ------------------------------------------------------------------------------
 -----------------------------Funtion Unit Status------------------------------
 FU          busy    Op    Fi    Fj    Fk        Qj        Qk    Rj    Rk
@@ -1556,9 +1506,8 @@ Instruction              Issue  Read Operands      Execution   Write Result
 L.D F6 34(R2)                1              2            3-3              4
 L.D F2 45(R3)                5              6            7-7              8
 MULT.D F0 F2 F4              6              9          10-19             20
-SUB.D F8 F6 F2               7              9          10-11             12
-DIV.D F10 F0 F6              8             21           22-               0
-ADD.D F6 F8 F2              13             14          15-16             22
+DIV.D F10 F0 F6              7             21           22-               0
+ADD.D F6 F8 F2               8              9          10-11             22
 ------------------------------------------------------------------------------
 -----------------------------Funtion Unit Status------------------------------
 FU          busy    Op    Fi    Fj    Fk        Qj        Qk    Rj    Rk
@@ -1587,9 +1536,8 @@ Instruction              Issue  Read Operands      Execution   Write Result
 L.D F6 34(R2)                1              2            3-3              4
 L.D F2 45(R3)                5              6            7-7              8
 MULT.D F0 F2 F4              6              9          10-19             20
-SUB.D F8 F6 F2               7              9          10-11             12
-DIV.D F10 F0 F6              8             21           22-               0
-ADD.D F6 F8 F2              13             14          15-16             22
+DIV.D F10 F0 F6              7             21           22-               0
+ADD.D F6 F8 F2               8              9          10-11             22
 ------------------------------------------------------------------------------
 -----------------------------Funtion Unit Status------------------------------
 FU          busy    Op    Fi    Fj    Fk        Qj        Qk    Rj    Rk
@@ -1618,9 +1566,8 @@ Instruction              Issue  Read Operands      Execution   Write Result
 L.D F6 34(R2)                1              2            3-3              4
 L.D F2 45(R3)                5              6            7-7              8
 MULT.D F0 F2 F4              6              9          10-19             20
-SUB.D F8 F6 F2               7              9          10-11             12
-DIV.D F10 F0 F6              8             21           22-               0
-ADD.D F6 F8 F2              13             14          15-16             22
+DIV.D F10 F0 F6              7             21           22-               0
+ADD.D F6 F8 F2               8              9          10-11             22
 ------------------------------------------------------------------------------
 -----------------------------Funtion Unit Status------------------------------
 FU          busy    Op    Fi    Fj    Fk        Qj        Qk    Rj    Rk
@@ -1649,9 +1596,8 @@ Instruction              Issue  Read Operands      Execution   Write Result
 L.D F6 34(R2)                1              2            3-3              4
 L.D F2 45(R3)                5              6            7-7              8
 MULT.D F0 F2 F4              6              9          10-19             20
-SUB.D F8 F6 F2               7              9          10-11             12
-DIV.D F10 F0 F6              8             21           22-               0
-ADD.D F6 F8 F2              13             14          15-16             22
+DIV.D F10 F0 F6              7             21           22-               0
+ADD.D F6 F8 F2               8              9          10-11             22
 ------------------------------------------------------------------------------
 -----------------------------Funtion Unit Status------------------------------
 FU          busy    Op    Fi    Fj    Fk        Qj        Qk    Rj    Rk
@@ -1680,9 +1626,8 @@ Instruction              Issue  Read Operands      Execution   Write Result
 L.D F6 34(R2)                1              2            3-3              4
 L.D F2 45(R3)                5              6            7-7              8
 MULT.D F0 F2 F4              6              9          10-19             20
-SUB.D F8 F6 F2               7              9          10-11             12
-DIV.D F10 F0 F6              8             21           22-               0
-ADD.D F6 F8 F2              13             14          15-16             22
+DIV.D F10 F0 F6              7             21           22-               0
+ADD.D F6 F8 F2               8              9          10-11             22
 ------------------------------------------------------------------------------
 -----------------------------Funtion Unit Status------------------------------
 FU          busy    Op    Fi    Fj    Fk        Qj        Qk    Rj    Rk
@@ -1711,9 +1656,8 @@ Instruction              Issue  Read Operands      Execution   Write Result
 L.D F6 34(R2)                1              2            3-3              4
 L.D F2 45(R3)                5              6            7-7              8
 MULT.D F0 F2 F4              6              9          10-19             20
-SUB.D F8 F6 F2               7              9          10-11             12
-DIV.D F10 F0 F6              8             21           22-               0
-ADD.D F6 F8 F2              13             14          15-16             22
+DIV.D F10 F0 F6              7             21           22-               0
+ADD.D F6 F8 F2               8              9          10-11             22
 ------------------------------------------------------------------------------
 -----------------------------Funtion Unit Status------------------------------
 FU          busy    Op    Fi    Fj    Fk        Qj        Qk    Rj    Rk
@@ -1742,9 +1686,8 @@ Instruction              Issue  Read Operands      Execution   Write Result
 L.D F6 34(R2)                1              2            3-3              4
 L.D F2 45(R3)                5              6            7-7              8
 MULT.D F0 F2 F4              6              9          10-19             20
-SUB.D F8 F6 F2               7              9          10-11             12
-DIV.D F10 F0 F6              8             21           22-               0
-ADD.D F6 F8 F2              13             14          15-16             22
+DIV.D F10 F0 F6              7             21           22-               0
+ADD.D F6 F8 F2               8              9          10-11             22
 ------------------------------------------------------------------------------
 -----------------------------Funtion Unit Status------------------------------
 FU          busy    Op    Fi    Fj    Fk        Qj        Qk    Rj    Rk
@@ -1773,9 +1716,8 @@ Instruction              Issue  Read Operands      Execution   Write Result
 L.D F6 34(R2)                1              2            3-3              4
 L.D F2 45(R3)                5              6            7-7              8
 MULT.D F0 F2 F4              6              9          10-19             20
-SUB.D F8 F6 F2               7              9          10-11             12
-DIV.D F10 F0 F6              8             21           22-               0
-ADD.D F6 F8 F2              13             14          15-16             22
+DIV.D F10 F0 F6              7             21           22-               0
+ADD.D F6 F8 F2               8              9          10-11             22
 ------------------------------------------------------------------------------
 -----------------------------Funtion Unit Status------------------------------
 FU          busy    Op    Fi    Fj    Fk        Qj        Qk    Rj    Rk
@@ -1804,9 +1746,8 @@ Instruction              Issue  Read Operands      Execution   Write Result
 L.D F6 34(R2)                1              2            3-3              4
 L.D F2 45(R3)                5              6            7-7              8
 MULT.D F0 F2 F4              6              9          10-19             20
-SUB.D F8 F6 F2               7              9          10-11             12
-DIV.D F10 F0 F6              8             21           22-               0
-ADD.D F6 F8 F2              13             14          15-16             22
+DIV.D F10 F0 F6              7             21           22-               0
+ADD.D F6 F8 F2               8              9          10-11             22
 ------------------------------------------------------------------------------
 -----------------------------Funtion Unit Status------------------------------
 FU          busy    Op    Fi    Fj    Fk        Qj        Qk    Rj    Rk
@@ -1835,9 +1776,8 @@ Instruction              Issue  Read Operands      Execution   Write Result
 L.D F6 34(R2)                1              2            3-3              4
 L.D F2 45(R3)                5              6            7-7              8
 MULT.D F0 F2 F4              6              9          10-19             20
-SUB.D F8 F6 F2               7              9          10-11             12
-DIV.D F10 F0 F6              8             21           22-               0
-ADD.D F6 F8 F2              13             14          15-16             22
+DIV.D F10 F0 F6              7             21           22-               0
+ADD.D F6 F8 F2               8              9          10-11             22
 ------------------------------------------------------------------------------
 -----------------------------Funtion Unit Status------------------------------
 FU          busy    Op    Fi    Fj    Fk        Qj        Qk    Rj    Rk
@@ -1866,9 +1806,8 @@ Instruction              Issue  Read Operands      Execution   Write Result
 L.D F6 34(R2)                1              2            3-3              4
 L.D F2 45(R3)                5              6            7-7              8
 MULT.D F0 F2 F4              6              9          10-19             20
-SUB.D F8 F6 F2               7              9          10-11             12
-DIV.D F10 F0 F6              8             21           22-               0
-ADD.D F6 F8 F2              13             14          15-16             22
+DIV.D F10 F0 F6              7             21           22-               0
+ADD.D F6 F8 F2               8              9          10-11             22
 ------------------------------------------------------------------------------
 -----------------------------Funtion Unit Status------------------------------
 FU          busy    Op    Fi    Fj    Fk        Qj        Qk    Rj    Rk
@@ -1897,9 +1836,8 @@ Instruction              Issue  Read Operands      Execution   Write Result
 L.D F6 34(R2)                1              2            3-3              4
 L.D F2 45(R3)                5              6            7-7              8
 MULT.D F0 F2 F4              6              9          10-19             20
-SUB.D F8 F6 F2               7              9          10-11             12
-DIV.D F10 F0 F6              8             21          22-61              0
-ADD.D F6 F8 F2              13             14          15-16             22
+DIV.D F10 F0 F6              7             21          22-61              0
+ADD.D F6 F8 F2               8              9          10-11             22
 ------------------------------------------------------------------------------
 -----------------------------Funtion Unit Status------------------------------
 FU          busy    Op    Fi    Fj    Fk        Qj        Qk    Rj    Rk
@@ -1928,9 +1866,8 @@ Instruction              Issue  Read Operands      Execution   Write Result
 L.D F6 34(R2)                1              2            3-3              4
 L.D F2 45(R3)                5              6            7-7              8
 MULT.D F0 F2 F4              6              9          10-19             20
-SUB.D F8 F6 F2               7              9          10-11             12
-DIV.D F10 F0 F6              8             21          22-61             62
-ADD.D F6 F8 F2              13             14          15-16             22
+DIV.D F10 F0 F6              7             21          22-61             62
+ADD.D F6 F8 F2               8              9          10-11             22
 ------------------------------------------------------------------------------
 -----------------------------Funtion Unit Status------------------------------
 FU          busy    Op    Fi    Fj    Fk        Qj        Qk    Rj    Rk
